@@ -1,0 +1,1 @@
+Optimized web assets for KZ Portfolio v10. Images are prepared locally for web deployment.

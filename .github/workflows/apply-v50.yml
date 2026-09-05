@@ -1,0 +1,32 @@
+name: Apply V50 softer gradient dividers
+on:
+  push:
+    paths:
+      - '.github/workflows/apply-v50.yml'
+permissions:
+  contents: write
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply V50
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('index.html')
+          s=p.read_text()
+          css='''<style id="v50-softer-dividers">
+          .name-role-rule,.rule{background:linear-gradient(90deg,rgba(217,102,62,.58) 0%,rgba(217,102,62,.50) 68%,rgba(217,102,62,.20) 87%,transparent 100%)!important;opacity:.78}
+          </style>'''
+          if 'id="v50-softer-dividers"' not in s:
+              s=s.replace('</head>',css+'</head>',1)
+          p.write_text(s)
+          PY
+      - name: Commit V50
+        run: |
+          git config user.name "fuxy-AI"
+          git config user.email "fuxymaxi@gmail.com"
+          git add index.html
+          git commit -m "V50: soften both gradient divider lines" || exit 0
+          git push

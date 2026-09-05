@@ -1,0 +1,33 @@
+name: Apply V47 clean hero reference cards
+on:
+  push:
+    paths:
+      - '.github/workflows/apply-v47.yml'
+permissions:
+  contents: write
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply V47
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('index.html')
+          s=p.read_text()
+          css='''<style id="v47-clean-reference-cards">
+          /* Hero reference cards: imagery only, no corner numbering. */
+          .hero .card .num{display:none!important}
+          </style>'''
+          if 'id="v47-clean-reference-cards"' not in s:
+              s=s.replace('</head>',css+'</head>',1)
+          p.write_text(s)
+          PY
+      - name: Commit V47
+        run: |
+          git config user.name "fuxy-AI"
+          git config user.email "fuxymaxi@gmail.com"
+          git add index.html
+          git commit -m "V47: remove numbering from hero reference cards" || exit 0
+          git push

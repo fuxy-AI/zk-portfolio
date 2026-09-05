@@ -1,0 +1,36 @@
+name: Apply V35 stacked name subtle drift
+on:
+  push:
+    paths:
+      - '.github/workflows/apply-v35.yml'
+permissions:
+  contents: write
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply V35
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          p=Path('index.html')
+          s=p.read_text()
+          # Preserve V34 font and compressed proportions, but keep the two lines as a vertical stack.
+          s=re.sub(r'\.name\{[^}]*\}', '.name{font-family:"Anton",Impact,Haettenschweiler,"Arial Narrow Bold",sans-serif;font-size:clamp(64px,7.4vw,130px);line-height:.68;font-weight:400;letter-spacing:-.045em;text-transform:uppercase;margin-top:-34px}', s, count=1)
+          s=re.sub(r'\.name \.top,\.name \.bottom\{[^}]*\}', '.name .top,.name .bottom{display:block;will-change:transform;transform:scaleY(.82);transform-origin:left center}', s, count=1)
+          s=re.sub(r'\.name \.top\{[^}]*\}', '.name .top{color:#fff3df;animation:driftA 8s ease-in-out infinite alternate}', s, count=1)
+          s=re.sub(r'\.name \.bottom\{[^}]*\}', '.name .bottom{color:#3f4143;animation:driftB 8s ease-in-out infinite alternate;margin-top:8px;margin-left:0}', s, count=1)
+          # Very subtle opposite horizontal drift: only a few pixels.
+          s=re.sub(r'@keyframes driftA\{[^}]*\}', '@keyframes driftA{to{transform:scaleY(.82) translateX(4px)}}', s, count=1)
+          s=re.sub(r'@keyframes driftB\{[^}]*\}', '@keyframes driftB{to{transform:scaleY(.82) translateX(-4px)}}', s, count=1)
+          p.write_text(s)
+          PY
+      - name: Commit V35
+        run: |
+          git config user.name "fuxy-AI"
+          git config user.email "fuxymaxi@gmail.com"
+          git add index.html
+          git commit -m "V35: restore stacked ZOLTAN KOCS with subtle horizontal drift" || exit 0
+          git push

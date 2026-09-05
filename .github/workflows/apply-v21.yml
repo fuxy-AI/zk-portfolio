@@ -1,0 +1,35 @@
+name: Apply V21 hero composition refinement
+on:
+  push:
+    paths:
+      - '.github/workflows/apply-v21.yml'
+permissions:
+  contents: write
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply V21 refinements
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('index.html')
+          s=p.read_text()
+          # Long accent rule matching the description width, fading into background at the end.
+          s=s.replace('.rule{width:42px;height:2px;background:var(--accent);margin:26px 0 18px}', '.rule{width:min(520px,100%);height:2px;background:linear-gradient(90deg,var(--accent) 0%,var(--accent) 72%,rgba(217,102,62,.42) 88%,transparent 100%);margin:26px 0 18px}')
+          # Larger collage, extending farther left while retaining right-side composition.
+          s=s.replace('.stage{height:min(610px,63vh);min-height:470px;position:relative;isolation:isolate;max-width:830px;margin-left:auto;margin-right:5vw;width:100%}', '.stage{height:min(650px,67vh);min-height:500px;position:relative;isolation:isolate;max-width:930px;margin-left:-4vw;margin-right:1vw;width:112%}')
+          # Ambient moving lights: softer and roughly half-strength so they stay abstract/background-only.
+          s=s.replace('.ambient-physics{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:.62;mix-blend-mode:screen;filter:blur(7px)}', '.ambient-physics{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:.31;mix-blend-mode:screen;filter:blur(11px)}')
+          # Static collage glow also softened to avoid competing with artwork.
+          s=s.replace('.stage:before,.stage:after{opacity:.32}', '.stage:before,.stage:after{opacity:.18}')
+          p.write_text(s)
+          PY
+      - name: Commit V21
+        run: |
+          git config user.name "fuxy-AI"
+          git config user.email "fuxymaxi@gmail.com"
+          git add index.html
+          git commit -m "V21: enlarge collage, extend accent rule and soften ambient lights" || exit 0
+          git push

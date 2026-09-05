@@ -1,0 +1,39 @@
+name: Apply V19 hero layout refinement
+on:
+  push:
+    paths:
+      - '.github/workflows/apply-v19.yml'
+permissions:
+  contents: write
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply V19 layout refinements
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('index.html')
+          s=p.read_text()
+          # Move eyebrow upward so header divider visually bisects the vertical spacing.
+          s=s.replace('.eyebrow{font-size:11px;letter-spacing:.34em;color:#aaa7a2;margin-bottom:34px;transform:translateY(-44px)}', '.eyebrow{font-size:11px;letter-spacing:.34em;color:#aaa7a2;margin-bottom:34px;transform:translateY(-72px)}')
+          # Increase separation between ZOLTAN and KOCS.
+          s=s.replace('.name .bottom{color:#3f4143;animation:driftB 7s ease-in-out infinite alternate;margin-top:7px;margin-left:0}', '.name .bottom{color:#3f4143;animation:driftB 7s ease-in-out infinite alternate;margin-top:18px;margin-left:0}')
+          # More breathing room between 3D and ARTIST; align both from their top edge.
+          s=s.replace('.role{margin-top:16px;font-size:clamp(46px,5.15vw,92px);line-height:.88;letter-spacing:-.045em;display:flex;align-items:baseline;gap:.09em}', '.role{margin-top:18px;font-size:clamp(46px,5.15vw,92px);line-height:.88;letter-spacing:-.045em;display:flex;align-items:flex-start;gap:.18em}')
+          s=s.replace('.role b{font-family:Impact,Haettenschweiler,"Arial Narrow Bold","Arial Narrow",sans-serif;color:#d9663e;font-weight:900;letter-spacing:-.035em}', '.role b{font-family:Impact,Haettenschweiler,"Arial Narrow Bold","Arial Narrow",sans-serif;color:#d9663e;font-weight:900;letter-spacing:-.035em;line-height:.88}')
+          s=s.replace('.role .artist{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:100;color:rgba(255,243,223,.76);-webkit-text-stroke:0;text-stroke:0;letter-spacing:-.085em;line-height:.88;transform:scaleX(.76);transform-origin:left bottom;padding:0;overflow:visible}', '.role .artist{font-family:"Helvetica Neue",Arial,sans-serif;font-weight:100;color:rgba(255,243,223,.72);-webkit-text-stroke:0;text-stroke:0;letter-spacing:-.055em;line-height:.88;transform:scaleX(.72);transform-origin:left top;padding:0;overflow:visible}')
+          # Enlarge and pull the right collage slightly inward.
+          s=s.replace('.stage{height:min(560px,58vh);min-height:440px;position:relative;isolation:isolate;max-width:760px;margin-left:auto;margin-right:8vw;width:92%}', '.stage{height:min(610px,63vh);min-height:470px;position:relative;isolation:isolate;max-width:830px;margin-left:auto;margin-right:5vw;width:100%}')
+          # Slightly brighter ambient light field without making it harsh.
+          s=s.replace('.ambient-physics{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:.54;mix-blend-mode:screen;filter:blur(7px)}', '.ambient-physics{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:.62;mix-blend-mode:screen;filter:blur(7px)}')
+          p.write_text(s)
+          PY
+      - name: Commit V19
+        run: |
+          git config user.name "fuxy-AI"
+          git config user.email "fuxymaxi@gmail.com"
+          git add index.html
+          git commit -m "V19: refine hero spacing, typography and collage scale" || exit 0
+          git push

@@ -1,0 +1,30 @@
+name: Apply V33 tighten role spacing
+on:
+  push:
+    paths:
+      - '.github/workflows/apply-v33.yml'
+permissions:
+  contents: write
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply V33
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          p=Path('index.html')
+          s=p.read_text()
+          # Bring ARTIST closer to 3D while keeping the approved typography and alignment.
+          s=re.sub(r'(\.role\{[^}]*?)gap:[^;}]+' , r'\1gap:clamp(8px,.55vw,11px)', s, count=1)
+          p.write_text(s)
+          PY
+      - name: Commit V33
+        run: |
+          git config user.name "fuxy-AI"
+          git config user.email "fuxymaxi@gmail.com"
+          git add index.html
+          git commit -m "V33: tighten spacing between 3D and ARTIST" || exit 0
+          git push

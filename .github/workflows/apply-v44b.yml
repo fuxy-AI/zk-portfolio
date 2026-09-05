@@ -1,0 +1,33 @@
+name: Apply V44b name spacing and KOCS color
+on:
+  push:
+    paths:
+      - '.github/workflows/apply-v44b.yml'
+permissions:
+  contents: write
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply V44b
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('index.html')
+          s=p.read_text()
+          css='''<style id="v44b-name-tune">
+          .name{position:relative;top:-12px!important}
+          .name .bottom{margin-top:18px!important;color:#7f8f98!important;text-shadow:none!important}
+          </style>'''
+          if 'id="v44b-name-tune"' not in s:
+              s=s.replace('</head>',css+'</head>',1)
+          p.write_text(s)
+          PY
+      - name: Commit V44b
+        run: |
+          git config user.name "fuxy-AI"
+          git config user.email "fuxymaxi@gmail.com"
+          git add index.html
+          git commit -m "V44b: lift name, increase gap and recolor KOCS" || exit 0
+          git push

@@ -1,0 +1,59 @@
+name: Apply V41 solid extruded 3D role
+on:
+  push:
+    paths:
+      - '.github/workflows/apply-v41.yml'
+permissions:
+  contents: write
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply V41
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('index.html')
+          s=p.read_text()
+          css='''<style id="v41-solid-3d">
+          .role{perspective:850px;perspective-origin:10% 50%}
+          .role b{position:relative!important;display:inline-block!important;transform-style:preserve-3d!important;transform-origin:50% 50%!important;animation:v41FlipSolid 6.5s cubic-bezier(.45,.05,.55,.95) infinite!important;text-shadow:none!important}
+          .role3d-size{display:block;visibility:hidden;pointer-events:none}
+          .role3d-layer{position:absolute;left:0;top:0;display:block;white-space:nowrap;backface-visibility:visible;font:inherit;letter-spacing:inherit;line-height:inherit;color:#a94429;text-shadow:none}
+          .role3d-layer.front{color:var(--accent)}
+          .role3d-layer.back{color:#bf5030}
+          @keyframes v41FlipSolid{0%,12%{transform:rotateX(0deg)}46%{transform:rotateX(180deg)}88%,100%{transform:rotateX(360deg)}}
+          @media (prefers-reduced-motion:reduce){.role b{animation:none!important}}
+          </style>'''
+          js='''<script id="v41-solid-3d-js">
+          (function(){
+            var el=document.querySelector('.role b');
+            if(!el || el.dataset.solid3d==='1') return;
+            el.dataset.solid3d='1';
+            el.setAttribute('aria-label','3D');
+            var z=[]; for(var i=-9;i<=9;i++) z.push(i);
+            var html='<span class="role3d-size" aria-hidden="true">3D</span>';
+            z.forEach(function(v){
+              var cls='role3d-layer';
+              if(v===9) cls+=' front';
+              if(v===-9) cls+=' back';
+              var shade=Math.round(92 + (v+9)/18*44);
+              html+='<span aria-hidden="true" class="'+cls+'" style="transform:translateZ('+v+'px);filter:brightness('+(shade/100)+')">3D</span>';
+            });
+            el.innerHTML=html;
+          })();
+          </script>'''
+          if 'id="v41-solid-3d"' not in s:
+              s=s.replace('</head>',css+'</head>',1)
+          if 'id="v41-solid-3d-js"' not in s:
+              s=s.replace('</body>',js+'</body>',1)
+          p.write_text(s)
+          PY
+      - name: Commit V41
+        run: |
+          git config user.name "fuxy-AI"
+          git config user.email "fuxymaxi@gmail.com"
+          git add index.html
+          git commit -m "V41: give rotating 3D label real visible CSS depth" || exit 0
+          git push

@@ -1,0 +1,35 @@
+name: Apply V37 name spacing and KOCS color
+on:
+  push:
+    paths:
+      - '.github/workflows/apply-v37.yml'
+permissions:
+  contents: write
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply V37
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('index.html')
+          s=p.read_text()
+          fix='''<style id="v37-name-tune">
+          /* Slightly open the letter spacing while preserving the compact Anton silhouette. */
+          .name{letter-spacing:-.018em!important}
+          /* Warm, restrained dark orange that belongs to the site's existing accent family. */
+          .name .bottom{color:#b95332!important}
+          </style>'''
+          if 'id="v37-name-tune"' not in s:
+              s=s.replace('</head>',fix+'</head>',1)
+          p.write_text(s)
+          PY
+      - name: Commit V37
+        run: |
+          git config user.name "fuxy-AI"
+          git config user.email "fuxymaxi@gmail.com"
+          git add index.html
+          git commit -m "V37: add name letter spacing and dark orange KOCS" || exit 0
+          git push

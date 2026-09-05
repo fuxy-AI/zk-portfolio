@@ -1,0 +1,36 @@
+name: Apply V43 static 3D role label
+on:
+  push:
+    paths:
+      - '.github/workflows/apply-v43.yml'
+permissions:
+  contents: write
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply V43
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('index.html')
+          s=p.read_text()
+          css='''<style id="v43-static-role">
+          /* Restore the 3D label to the original clean static presentation. */
+          .role{perspective:none!important}
+          .role b{animation:none!important;transform:none!important;transform-style:flat!important;text-shadow:none!important}
+          .role3d-layer{display:none!important}
+          .role3d-size{visibility:visible!important;display:block!important;color:var(--accent)!important;pointer-events:none}
+          </style>'''
+          if 'id="v43-static-role"' not in s:
+              s=s.replace('</head>',css+'</head>',1)
+          p.write_text(s)
+          PY
+      - name: Commit V43
+        run: |
+          git config user.name "fuxy-AI"
+          git config user.email "fuxymaxi@gmail.com"
+          git add index.html
+          git commit -m "V43: restore static 3D role label" || exit 0
+          git push

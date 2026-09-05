@@ -1,0 +1,35 @@
+name: Apply V30 align ARTIST height
+on:
+  push:
+    paths:
+      - '.github/workflows/apply-v30.yml'
+permissions:
+  contents: write
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply V30
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          p=Path('index.html')
+          s=p.read_text()
+          # Keep the approved V29 fonts. Only make ARTIST optically the same height as 3D
+          # and align both on one visual baseline/top line.
+          s=re.sub(r'\.role\{[^}]*\}', '.role{margin-top:18px;font-size:clamp(46px,5vw,88px);line-height:.88;display:flex;align-items:flex-start;gap:.20em;white-space:nowrap}', s, count=1)
+          # Preserve Anton styling for 3D but normalize its box.
+          s=re.sub(r'\.role b\{[^}]*\}', '.role b{font-family:"Anton",Impact,Haettenschweiler,sans-serif;color:var(--accent);font-weight:400;letter-spacing:-.035em;line-height:.88;display:block}', s, count=1)
+          # Preserve Barlow Condensed Thin and increase only its vertical scale/size so its cap height matches 3D.
+          s=re.sub(r'\.role \.artist\{[^}]*\}', '.role .artist{font-family:"Barlow Condensed","Arial Narrow",sans-serif;font-weight:100;color:rgba(255,255,255,.82);font-size:1.16em;letter-spacing:-.035em;line-height:.76;display:block;transform:scaleX(.82);transform-origin:left top;-webkit-text-stroke:0;text-stroke:0;padding:0;overflow:visible}', s, count=1)
+          p.write_text(s)
+          PY
+      - name: Commit V30
+        run: |
+          git config user.name "fuxy-AI"
+          git config user.email "fuxymaxi@gmail.com"
+          git add index.html
+          git commit -m "V30: align ARTIST height with orange 3D" || exit 0
+          git push

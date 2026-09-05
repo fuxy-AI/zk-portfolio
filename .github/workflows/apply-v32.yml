@@ -1,0 +1,32 @@
+name: Apply V32 baseline alignment
+on:
+  push:
+    paths:
+      - '.github/workflows/apply-v32.yml'
+permissions:
+  contents: write
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply V32
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          p=Path('index.html')
+          s=p.read_text()
+          # Use typographic baseline alignment instead of flex-start.
+          s=re.sub(r'\.role\{[^}]*\}', '.role{margin-top:18px;font-size:clamp(46px,5vw,88px);line-height:1;display:flex;align-items:baseline;gap:.20em;white-space:nowrap}', s, count=1)
+          s=re.sub(r'\.role b\{[^}]*\}', '.role b{font-family:"Anton",Impact,Haettenschweiler,sans-serif;color:var(--accent);font-weight:400;letter-spacing:-.035em;line-height:1;display:block}', s, count=1)
+          s=re.sub(r'\.role \.artist\{[^}]*\}', '.role .artist{font-family:"Barlow Condensed","Arial Narrow",sans-serif;font-weight:100;color:rgba(255,255,255,.82);font-size:1.16em;letter-spacing:-.035em;line-height:1;display:block;transform:scaleX(.82);transform-origin:left baseline;-webkit-text-stroke:0;text-stroke:0;padding:0;overflow:visible}', s, count=1)
+          p.write_text(s)
+          PY
+      - name: Commit V32
+        run: |
+          git config user.name "fuxy-AI"
+          git config user.email "fuxymaxi@gmail.com"
+          git add index.html
+          git commit -m "V32: baseline-align 3D and ARTIST" || exit 0
+          git push

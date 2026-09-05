@@ -1,0 +1,39 @@
+name: Apply V39 rotating 3D role
+on:
+  push:
+    paths:
+      - '.github/workflows/apply-v39.yml'
+permissions:
+  contents: write
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply V39
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('index.html')
+          s=p.read_text()
+          fix='''<style id="v39-role-3d-spin">
+          .role{perspective:700px;perspective-origin:10% 50%}
+          .role b{position:relative;transform-style:preserve-3d;backface-visibility:visible;animation:v39Spin3D 6.5s cubic-bezier(.45,.05,.55,.95) infinite;transform-origin:50% 52%;text-shadow:1px 0 0 #b84e2e,2px 0 0 #9d4128,3px 0 0 #783120,7px 5px 16px rgba(0,0,0,.30)}
+          @keyframes v39Spin3D{
+            0%,12%{transform:rotateY(0deg)}
+            46%{transform:rotateY(180deg)}
+            88%,100%{transform:rotateY(360deg)}
+          }
+          @media (prefers-reduced-motion:reduce){.role b{animation:none}}
+          </style>'''
+          if 'id="v39-role-3d-spin"' not in s:
+              s=s.replace('</head>',fix+'</head>',1)
+          p.write_text(s)
+          PY
+      - name: Commit V39
+        run: |
+          git config user.name "fuxy-AI"
+          git config user.email "fuxymaxi@gmail.com"
+          git add index.html
+          git commit -m "V39: rotate 3D role label in perspective" || exit 0
+          git push

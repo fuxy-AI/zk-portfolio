@@ -1,4 +1,13 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Kócs Zoltán — 3D Portfolio Preview</title></head><body><script>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Kócs Zoltán — 3D Portfolio Preview</title><style id="v42-uniform-faces">
+/* Remove the depth gradient from V41 and keep both readable faces equally crisp. */
+.role3d-layer{filter:none!important;color:#9f442b!important;text-shadow:none!important}
+.role3d-layer.front,.role3d-layer.back{
+  color:var(--accent)!important;
+  filter:none!important;
+  -webkit-text-stroke:.35px rgba(255,190,155,.28);
+  text-shadow:0 0 0.01px rgba(255,255,255,.01)!important
+}
+</style></head><body><script>
 fetch('base.html?v=showreel-preview').then(r=>r.text()).then(html=>{
   html=html.replace('<a href="#about">ABOUT</a><a href="#contact">CONTACT</a>','<a href="#about">ABOUT</a><a href="#showreel">SHOWREEL</a><a href="#contact">CONTACT</a>');
   const showreel=`<section id="showreel" class="section section-anchor showreel-section"><div class="eyebrow">SHOWREEL</div><h2>Selected 3D Work</h2><p class="lead">A focused selection of my 3D work across modeling, texturing, look development, shading and final presentation.</p><div class="showreel-frame"><iframe src="https://www.youtube.com/embed/YmtCGnmd5ZM?rel=0" title="Kócs Zoltán 3D Showreel" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><p class="showreel-note">Press play to watch the reel directly on the site.</p></section>`;

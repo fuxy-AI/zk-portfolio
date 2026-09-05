@@ -1,0 +1,37 @@
+name: Apply V49 name role divider
+on:
+  push:
+    paths:
+      - '.github/workflows/apply-v49.yml'
+permissions:
+  contents: write
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply V49
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('index.html')
+          s=p.read_text()
+          old='<div class="role"><b>3D</b><span class="artist">ARTIST</span></div>'
+          new='<div class="name-role-rule" aria-hidden="true"></div><div class="role"><b>3D</b><span class="artist">ARTIST</span></div>'
+          if 'class="name-role-rule"' not in s:
+              s=s.replace(old,new,1)
+          css='''<style id="v49-name-role-divider">
+          .name-role-rule{width:min(520px,100%);height:2px;background:linear-gradient(90deg,var(--accent) 0%,var(--accent) 72%,rgba(217,102,62,.42) 88%,transparent 100%);margin:27px 0 25px}
+          .name-role-rule + .role{margin-top:0!important}
+          </style>'''
+          if 'id="v49-name-role-divider"' not in s:
+              s=s.replace('</head>',css+'</head>',1)
+          p.write_text(s)
+          PY
+      - name: Commit V49
+        run: |
+          git config user.name "fuxy-AI"
+          git config user.email "fuxymaxi@gmail.com"
+          git add index.html
+          git commit -m "V49: add gradient divider between name and role" || exit 0
+          git push

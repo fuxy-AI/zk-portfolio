@@ -1,0 +1,39 @@
+name: Apply V26 hero balance and typography
+on:
+  push:
+    paths:
+      - '.github/workflows/apply-v26.yml'
+permissions:
+  contents: write
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply V26
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          p=Path('index.html')
+          s=p.read_text()
+          # Stronger, more defined ambient light spots.
+          s=re.sub(r'(\.ambient-physics\{[^}]*?)opacity:\s*[.0-9]+;', r'\1opacity:.72;', s, count=1)
+          s=re.sub(r'(\.ambient-physics\{[^}]*?)filter:blur\([^)]*\)', r'\1filter:blur(2.5px)', s, count=1)
+          s=re.sub(r'\.stage:before,\.stage:after\{opacity:[^}]+\}', '.stage:before,.stage:after{opacity:.38}', s, count=1)
+          # Put the five-image collage roughly midway between the name block and right viewport edge.
+          # Preserve internal card arrangement, move the whole stage as one composition.
+          s=re.sub(r'\.stage\{height:min\(650px,67vh\);min-height:500px;position:relative;isolation:isolate;max-width:930px;[^}]*\}', '.stage{height:min(650px,67vh);min-height:500px;position:relative;isolation:isolate;max-width:930px;margin-left:-9vw;margin-right:5vw;width:108%}', s, count=1)
+          # Refine role: heavy orange 3D + ultra-thin ARTIST, aligned at the top.
+          s=re.sub(r'\.role\{[^}]*\}', '.role{margin-top:18px;font-size:clamp(46px,5.15vw,92px);line-height:.86;display:flex;align-items:flex-start;gap:.22em}', s, count=1)
+          s=re.sub(r'\.role b\{[^}]*\}', '.role b{font-family:Impact,Haettenschweiler,"Arial Narrow Bold","Arial Narrow",sans-serif;color:var(--accent);font-weight:900;letter-spacing:-.035em;line-height:.86}', s, count=1)
+          s=re.sub(r'\.role \.artist\{[^}]*\}', '.role .artist{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:100;color:rgba(255,243,223,.78);font-stretch:condensed;letter-spacing:-.045em;line-height:.86;transform:scaleX(.68);transform-origin:left top;-webkit-text-stroke:0;text-stroke:0;padding:0;overflow:visible}', s, count=1)
+          p.write_text(s)
+          PY
+      - name: Commit V26
+        run: |
+          git config user.name "fuxy-AI"
+          git config user.email "fuxymaxi@gmail.com"
+          git add index.html
+          git commit -m "V26: strengthen ambient lights and rebalance hero collage typography" || exit 0
+          git push

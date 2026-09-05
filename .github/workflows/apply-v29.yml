@@ -1,0 +1,39 @@
+name: Apply V29 reference targeted typography
+on:
+  push:
+    paths:
+      - '.github/workflows/apply-v29.yml'
+permissions:
+  contents: write
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply V29 typography
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          p=Path('index.html')
+          s=p.read_text()
+
+          # Load actual display fonts instead of relying on stretched system fonts.
+          font_link='<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@100;200&display=swap" rel="stylesheet">'
+          if 'family=Anton' not in s:
+              s=s.replace('<title>Kócs Zoltán — 3D Portfolio</title>', '<title>Kócs Zoltán — 3D Portfolio</title>'+font_link)
+
+          # Match reference proportions more aggressively.
+          s=re.sub(r'\.role\{[^}]*\}', '.role{margin-top:18px;font-size:clamp(48px,5.2vw,92px);line-height:.86;display:flex;align-items:center;gap:.16em;white-space:nowrap}', s, count=1)
+          s=re.sub(r'\.role b\{[^}]*\}', '.role b{font-family:"Anton",Impact,Haettenschweiler,sans-serif;color:var(--accent);font-weight:400;letter-spacing:-.045em;line-height:.86;transform:scaleX(.96);transform-origin:left center}', s, count=1)
+          s=re.sub(r'\.role \.artist\{[^}]*\}', '.role .artist{font-family:"Barlow Condensed","Arial Narrow",sans-serif;font-weight:100;color:rgba(255,255,255,.90);letter-spacing:-.035em;line-height:.86;transform:scaleX(.92);transform-origin:left center;-webkit-text-stroke:0;text-stroke:0;padding:0;overflow:visible}', s, count=1)
+
+          p.write_text(s)
+          PY
+      - name: Commit V29
+        run: |
+          git config user.name "fuxy-AI"
+          git config user.email "fuxymaxi@gmail.com"
+          git add index.html
+          git commit -m "V29: use Anton and Barlow Condensed for reference-matched 3D ARTIST" || exit 0
+          git push

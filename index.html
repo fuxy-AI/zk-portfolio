@@ -2,11 +2,12 @@
 .role3d-layer{filter:none!important;color:#9f442b!important;text-shadow:none!important}
 .role3d-layer.front,.role3d-layer.back{color:var(--accent)!important;filter:none!important;-webkit-text-stroke:.35px rgba(255,190,155,.28);text-shadow:0 0 0.01px rgba(255,255,255,.01)!important}
 </style></head><body><script>
-fetch('base.html?v=showreel-preview-36').then(r=>r.text()).then(html=>{
+fetch('base.html?v=showreel-preview-37').then(r=>r.text()).then(html=>{
   html=html.replace('<a href="#work" class="active">WORK</a><a href="#about">ABOUT</a><a href="#contact">CONTACT</a>','<a href="#work" class="active" data-en="WORK" data-hu="MUNKÁK">WORK</a><a href="#about" data-en="ABOUT" data-hu="RÓLAM">ABOUT</a><a href="#showreel" data-en="SHOWREEL" data-hu="SHOWREEL">SHOWREEL</a><a href="#contact" data-en="CONTACT" data-hu="KAPCSOLAT">CONTACT</a>');
   html=html.replace("document.querySelectorAll('[data-en]').forEach(el=>el.textContent=el.dataset[l]);","document.querySelectorAll('[data-en]').forEach(el=>el.textContent=el.dataset[l]);requestAnimationFrame(()=>requestAnimationFrame(()=>{const activeNav=nav.find(a=>a.classList.contains('active'));moveNavMarker(activeNav);}));");
   html=html.replace('const count=window.innerWidth<720?10:18;','const count=window.innerWidth<720?8:14;');
-  html=html.replaceAll('[218,96,52]','[55,255,232]').replaceAll('[255,38,0]','[55,255,232]').replaceAll('[35,205,190]','[55,255,232]');
+  html=html.replace('alpha:.10+Math.random()*.11};',"alpha:.10+Math.random()*.11,color:Math.random()<.3?'orange':'teal'};");
+  html=html.replace('const orange=[218,96,52],teal=[35,205,190];const rr=Math.round(lerp(orange[0],teal[0],progress)),gg=Math.round(lerp(orange[1],teal[1],progress)),bb=Math.round(lerp(orange[2],teal[2],progress));',"const teal=[55,255,232],orange=[255,70,25],c=p.color==='orange'?orange:teal;const rr=c[0],gg=c[1],bb=c[2];");
   html=html.replace('const r=22+Math.random()*56;','const r=10+Math.pow(Math.random(),1.35)*104;');
   html=html.replace('alpha:.10+Math.random()*.11','alpha:.13+Math.pow(Math.random(),.72)*.42');
   html=html.replace('p.r*2.05);glow.addColorStop(0,`rgba(${rr},${gg},${bb},${p.alpha*.56})`);glow.addColorStop(.20,`rgba(${rr},${gg},${bb},${p.alpha*.30})`);glow.addColorStop(.66,`rgba(${rr},${gg},${bb},${p.alpha*.08})`);','p.r*2.7);glow.addColorStop(0,`rgba(${rr},${gg},${bb},${Math.min(1,p.alpha*1.7)})`);glow.addColorStop(.14,`rgba(${rr},${gg},${bb},${p.alpha*1.05})`);glow.addColorStop(.54,`rgba(${rr},${gg},${bb},${p.alpha*.38})`);');

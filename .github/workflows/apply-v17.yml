@@ -1,8 +1,1 @@
-name: disabled-old-workflow
-on:
-  workflow_dispatch:
-jobs:
-  noop:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "Old workflow disabled during cleanup"
+# obsolete workflow intentionally disabled

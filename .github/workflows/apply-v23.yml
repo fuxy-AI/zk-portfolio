@@ -1,0 +1,34 @@
+name: Apply V23 hero reference alignment
+on:
+  push:
+    paths:
+      - '.github/workflows/apply-v23.yml'
+permissions:
+  contents: write
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply V23 reference-matched hero layout
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('index.html')
+          s=p.read_text()
+          # Pull the full 5-image collage farther inward/left so its left edge visually aligns near the WORK nav column.
+          s=s.replace('.stage{height:min(650px,67vh);min-height:500px;position:relative;isolation:isolate;max-width:930px;margin-left:-4vw;margin-right:1vw;width:112%}', '.stage{height:min(650px,67vh);min-height:500px;position:relative;isolation:isolate;max-width:930px;margin-left:-11vw;margin-right:0;width:114%}')
+          # Match the thin ARTIST treatment from the approved reference: very light, clean, full-height, no outline.
+          s=s.replace('.role .artist{font-family:"Helvetica Neue",Arial,sans-serif;font-weight:100;color:rgba(255,243,223,.72);-webkit-text-stroke:0;text-stroke:0;letter-spacing:-.055em;line-height:.88;transform:scaleX(.72);transform-origin:left top;padding:0;overflow:visible}', '.role .artist{font-family:"Helvetica Neue",Arial,sans-serif;font-weight:100;color:rgba(255,243,223,.78);-webkit-text-stroke:0;text-stroke:0;letter-spacing:-.035em;line-height:.88;transform:scaleX(.84);transform-origin:left top;padding:0;overflow:visible}')
+          # Bring the ambient light spots back to the approved reference visibility: present, soft, and secondary.
+          s=s.replace('.ambient-physics{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:.31;mix-blend-mode:screen;filter:blur(11px)}', '.ambient-physics{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:.38;mix-blend-mode:screen;filter:blur(10px)}')
+          s=s.replace('.stage:before,.stage:after{opacity:.18}', '.stage:before,.stage:after{opacity:.22}')
+          p.write_text(s)
+          PY
+      - name: Commit V23
+        run: |
+          git config user.name "fuxy-AI"
+          git config user.email "fuxymaxi@gmail.com"
+          git add index.html
+          git commit -m "V23: align collage inward and match approved hero reference" || exit 0
+          git push

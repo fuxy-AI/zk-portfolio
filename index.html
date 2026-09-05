@@ -2,12 +2,12 @@
 .role3d-layer{filter:none!important;color:#9f442b!important;text-shadow:none!important}
 .role3d-layer.front,.role3d-layer.back{color:var(--accent)!important;filter:none!important;-webkit-text-stroke:.35px rgba(255,190,155,.28);text-shadow:0 0 0.01px rgba(255,255,255,.01)!important}
 </style></head><body><script>
-fetch('base.html?v=showreel-preview-22').then(r=>r.text()).then(html=>{
+fetch('base.html?v=showreel-preview-23').then(r=>r.text()).then(html=>{
   html=html.replace('<a href="#work" class="active">WORK</a><a href="#about">ABOUT</a><a href="#contact">CONTACT</a>','<a href="#work" class="active" data-en="WORK" data-hu="MUNKÁK">WORK</a><a href="#about" data-en="ABOUT" data-hu="RÓLAM">ABOUT</a><a href="#showreel" data-en="SHOWREEL" data-hu="SHOWREEL">SHOWREEL</a><a href="#contact" data-en="CONTACT" data-hu="KAPCSOLAT">CONTACT</a>');
   html=html.replace("document.querySelectorAll('[data-en]').forEach(el=>el.textContent=el.dataset[l]);","document.querySelectorAll('[data-en]').forEach(el=>el.textContent=el.dataset[l]);requestAnimationFrame(()=>requestAnimationFrame(()=>{const activeNav=nav.find(a=>a.classList.contains('active'));moveNavMarker(activeNav);}));");
   html=html.replace('const count=window.innerWidth<720?10:18;','const count=window.innerWidth<720?8:14;');
-  html=html.replace('const orange=[218,96,52],teal=[35,205,190];\n    const rr=Math.round(lerp(orange[0],teal[0],progress)),\n          gg=Math.round(lerp(orange[1],teal[1],progress)),\n          bb=Math.round(lerp(orange[2],teal[2],progress));','const orange=[255,38,0],mid=[112,74,62],teal=[24,200,184];\n    const t=progress<.5?progress*2:(progress-.5)*2;\n    const from=progress<.5?orange:mid,to=progress<.5?mid:teal;\n    const rr=Math.round(lerp(from[0],to[0],t)),\n          gg=Math.round(lerp(from[1],to[1],t)),\n          bb=Math.round(lerp(from[2],to[2],t));');
-  html=html.replace('const orange=[218,96,52],teal=[35,205,190];','const orange=[255,38,0],teal=[24,200,184];');
+  html=html.replace('const orange=[218,96,52],teal=[35,205,190];\n    const rr=Math.round(lerp(orange[0],teal[0],progress)),\n          gg=Math.round(lerp(orange[1],teal[1],progress)),\n          bb=Math.round(lerp(orange[2],teal[2],progress));','const teal=[24,200,184];\n    const rr=teal[0],gg=teal[1],bb=teal[2];');
+  html=html.replace('const orange=[218,96,52],teal=[35,205,190];','const teal=[24,200,184];');
   html=html.replace('const r=22+Math.random()*56;','const r=10+Math.pow(Math.random(),1.35)*104;');
   html=html.replace('alpha:.10+Math.random()*.11','alpha:.07+Math.pow(Math.random(),.72)*.30');
   html=html.replace('p.r*2.05);glow.addColorStop(0,`rgba(${rr},${gg},${bb},${p.alpha*.56})`);glow.addColorStop(.20,`rgba(${rr},${gg},${bb},${p.alpha*.30})`);glow.addColorStop(.66,`rgba(${rr},${gg},${bb},${p.alpha*.08})`);','p.r*2.7);glow.addColorStop(0,`rgba(${rr},${gg},${bb},${Math.min(1,p.alpha*1.35)})`);glow.addColorStop(.14,`rgba(${rr},${gg},${bb},${p.alpha*.82})`);glow.addColorStop(.54,`rgba(${rr},${gg},${bb},${p.alpha*.27})`);');

@@ -1,0 +1,1 @@
+Ambient light strength target: canvas opacity .66; stage glow opacity .40

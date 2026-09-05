@@ -1,0 +1,33 @@
+name: Apply V20 unified orange accent
+on:
+  push:
+    paths:
+      - '.github/workflows/apply-v20.yml'
+permissions:
+  contents: write
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Unify orange accent color
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('index.html')
+          s=p.read_text()
+          s=s.replace('--accent:#ff4a18;--accent2:#ff7138;', '--accent:#d9663e;--accent2:#e27a55;')
+          s=s.replace('rgba(255,74,24,.16)', 'rgba(217,102,62,.16)')
+          s=s.replace('rgba(255,74,24,.08)', 'rgba(217,102,62,.08)')
+          s=s.replace('rgba(255,74,24,.55)', 'rgba(217,102,62,.42)')
+          s=s.replace('rgba(255,74,24,.9)', 'rgba(217,102,62,.82)')
+          s=s.replace('rgba(255,74,24,.16)', 'rgba(217,102,62,.14)')
+          p.write_text(s)
+          PY
+      - name: Commit V20
+        run: |
+          git config user.name "fuxy-AI"
+          git config user.email "fuxymaxi@gmail.com"
+          git add index.html
+          git commit -m "V20: unify muted orange accents" || exit 0
+          git push

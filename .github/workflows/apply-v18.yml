@@ -1,0 +1,36 @@
+name: Apply V18 typography and orange tone refinement
+on:
+  push:
+    paths:
+      - '.github/workflows/apply-v18.yml'
+permissions:
+  contents: write
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Refine spacing, Artist type and orange intensity
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('index.html')
+          s=p.read_text()
+          s=s.replace('.name{font-size:clamp(64px,7.4vw,130px);line-height:.80;font-weight:980;letter-spacing:-.068em;text-transform:uppercase;margin-top:-34px}', '.name{font-size:clamp(64px,7.4vw,130px);line-height:.79;font-weight:980;letter-spacing:-.068em;text-transform:uppercase;margin-top:-34px}')
+          s=s.replace('.name .bottom{color:#3f4143;animation:driftB 7s ease-in-out infinite alternate;margin-top:10px;margin-left:0}', '.name .bottom{color:#3f4143;animation:driftB 7s ease-in-out infinite alternate;margin-top:7px;margin-left:0}')
+          s=s.replace('color:#e85a2a;font-weight:900', 'color:#d9663e;font-weight:900')
+          s=s.replace('.role .artist{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:100;color:rgba(255,243,223,.76);-webkit-text-stroke:0;text-stroke:0;letter-spacing:-.075em;line-height:.88;transform:scaleX(.78);transform-origin:left bottom;padding:0;overflow:visible}', '.role .artist{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:100;color:rgba(255,243,223,.76);-webkit-text-stroke:0;text-stroke:0;letter-spacing:-.085em;line-height:.88;transform:scaleX(.76);transform-origin:left bottom;padding:0;overflow:visible}')
+          s=s.replace('rgba(255,74,24,.40)', 'rgba(221,91,48,.30)')
+          s=s.replace('rgba(255,95,35,.27)', 'rgba(214,104,61,.20)')
+          s=s.replace('rgba(255,74,24,.18)', 'rgba(205,92,54,.14)')
+          s=s.replace('rgba(255,74,24,.21)', 'rgba(214,100,58,.16)')
+          s=s.replace('const orange=[255,82,24]', 'const orange=[218,96,52]')
+          p.write_text(s)
+          PY
+      - name: Commit V18
+        run: |
+          git config user.name "fuxy-AI"
+          git config user.email "fuxymaxi@gmail.com"
+          git add index.html
+          git commit -m "V18: refine hero spacing, thin Artist and soften orange" || exit 0
+          git push

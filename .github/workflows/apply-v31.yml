@@ -1,0 +1,31 @@
+name: Apply V31 optical role alignment
+on:
+  push:
+    paths:
+      - '.github/workflows/apply-v31.yml'
+permissions:
+  contents: write
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply V31
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          p=Path('index.html')
+          s=p.read_text()
+          # Anton and Barlow Condensed have different internal font metrics.
+          # Flex-start aligns their CSS boxes, not the visible cap-height. Compensate optically.
+          s=re.sub(r'\.role \.artist\{[^}]*\}', '.role .artist{font-family:"Barlow Condensed","Arial Narrow",sans-serif;font-weight:100;color:rgba(255,255,255,.82);font-size:1.16em;letter-spacing:-.035em;line-height:.76;display:block;transform:translateY(-.095em) scaleX(.82);transform-origin:left top;-webkit-text-stroke:0;text-stroke:0;padding:0;overflow:visible}', s, count=1)
+          p.write_text(s)
+          PY
+      - name: Commit V31
+        run: |
+          git config user.name "fuxy-AI"
+          git config user.email "fuxymaxi@gmail.com"
+          git add index.html
+          git commit -m "V31: optically align ARTIST with 3D" || exit 0
+          git push

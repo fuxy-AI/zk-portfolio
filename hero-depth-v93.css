@@ -1,5 +1,5 @@
 @media(min-width:721px){
-  .hero .eyebrow{transform:translateY(-120px)!important}
+  .hero .eyebrow{transform:translate(-30px,-120px)!important}
   .hero .name .bottom{display:inline-block!important;transform-origin:left top!important;scale:1 .84}
   .hero .stage{perspective:1250px!important;perspective-origin:50% 46%;transform-style:preserve-3d!important}
   .hero .stage .card{transform-style:preserve-3d!important;backface-visibility:hidden;animation:heroCardFloat3D 9s ease-in-out infinite alternate!important;will-change:transform;box-shadow:0 24px 56px rgba(0,0,0,.5)}

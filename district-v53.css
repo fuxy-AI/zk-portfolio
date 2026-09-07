@@ -1,14 +1,16 @@
-/* v53 District 9 layout refinements */
+/* v54 District 9 layout refinements */
 #district9 .workitem:nth-child(1){
-  right:3.5%!important;
-  top:0!important;
-  width:clamp(430px,39vw,650px)!important;
+  left:68%!important;
+  right:auto!important;
+  top:50%!important;
+  translate:-50% -50%!important;
+  width:clamp(360px,31vw,520px)!important;
   height:auto!important;
   aspect-ratio:auto!important;
   background:transparent!important;
   border:0!important;
   overflow:visible!important;
-  box-shadow:0 44px 120px rgba(0,0,0,.7),0 0 58px rgba(217,102,62,.13)!important;
+  box-shadow:none!important;
 }
 #district9 .workitem:nth-child(1) img{
   width:100%!important;
@@ -20,6 +22,7 @@
   background:transparent!important;
   border:1px solid rgba(217,102,62,.34)!important;
   border-radius:2px;
+  box-shadow:0 36px 100px rgba(0,0,0,.7),0 0 54px rgba(217,102,62,.12)!important;
 }
 #district9 .workitem:nth-child(2){left:2%!important;top:27%!important}
 #district9 .workitem:nth-child(3){left:10%!important;top:20%!important}
@@ -28,7 +31,7 @@
 #district9 .workitem:nth-child(6){left:34%!important;top:29%!important}
 #district9 .workitem:nth-child(n+7){display:none!important}
 @media(max-width:980px){
-  #district9 .workitem:nth-child(1){right:1%!important;width:390px!important;height:auto!important}
+  #district9 .workitem:nth-child(1){left:69%!important;width:390px!important;height:auto!important}
   #district9 .workitem:nth-child(2){left:0!important}
   #district9 .workitem:nth-child(3){left:8%!important}
   #district9 .workitem:nth-child(4){left:16%!important}
@@ -36,7 +39,7 @@
   #district9 .workitem:nth-child(6){left:32%!important}
 }
 @media(max-width:720px){
-  #district9 .workitem:nth-child(1){right:0!important;top:5px!important;width:64vw!important;height:auto!important}
+  #district9 .workitem:nth-child(1){left:66%!important;top:43%!important;width:62vw!important;height:auto!important}
   #district9 .workitem:nth-child(2){left:0!important;top:170px!important}
   #district9 .workitem:nth-child(3){left:10%!important;top:158px!important}
   #district9 .workitem:nth-child(4){left:20%!important;top:176px!important}

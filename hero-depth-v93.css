@@ -1,5 +1,5 @@
 @media(min-width:721px){
-  .hero .eyebrow{transform:translate(-30px,-120px)!important}
+  .hero .eyebrow{transform:translate(0,-120px)!important}
   .hero .name .bottom{display:inline-block!important;transform-origin:left top!important;scale:1 .84}
   .brand .kz{font-size:0!important}
   .brand .kz::after{content:"ZK";font-size:32px!important;color:#f4f2ef}

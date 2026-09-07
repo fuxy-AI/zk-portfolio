@@ -3,20 +3,20 @@
   .hero .name .bottom{display:inline-block!important;transform-origin:left top!important;scale:1 .84}
   .brand .kz{font-size:0!important}
   .brand .kz::after{content:"ZK";font-size:32px!important;color:#f4f2ef}
-  .hero .stage{perspective:1250px!important;perspective-origin:50% 46%;transform-style:preserve-3d!important}
+  .hero .stage{perspective:820px!important;perspective-origin:52% 44%;transform-style:preserve-3d!important}
   .hero .stage .card{transform-style:preserve-3d!important;backface-visibility:hidden;animation:heroCardFloat3D 9s ease-in-out infinite alternate!important;will-change:transform;box-shadow:0 24px 56px rgba(0,0,0,.5)}
-  .hero .stage .c1{--rx:-4deg;--ry:18deg;--rz:-6deg;--tz:-28px;animation-duration:10.5s!important;animation-delay:-2s!important}
-  .hero .stage .c2{--rx:-3deg;--ry:-18deg;--rz:5deg;--tz:-20px;animation-duration:11.5s!important;animation-delay:-4s!important}
-  .hero .stage .c3{--rx:3deg;--ry:24deg;--rz:-7deg;--tz:18px;animation-duration:9.2s!important;animation-delay:-5s!important}
-  .hero .stage .c4{--rx:0deg;--ry:0deg;--rz:2deg;--tz:52px;animation-duration:10s!important;animation-delay:-1s!important;box-shadow:0 30px 72px rgba(0,0,0,.58),0 0 28px rgba(217,102,62,.08)}
-  .hero .stage .c5{--rx:4deg;--ry:-24deg;--rz:7deg;--tz:16px;animation-duration:9.8s!important;animation-delay:-6s!important}
-  .hero .stage .c6{--rx:-8deg;--ry:20deg;--rz:5deg;--tz:-8px;animation-duration:11s!important;animation-delay:-3s!important}
-  .hero .stage .c7{--rx:-8deg;--ry:-20deg;--rz:-5deg;--tz:0px;animation-duration:10.3s!important;animation-delay:-5.5s!important}
-  .hero .stage .card:hover{--tz:72px;box-shadow:0 34px 82px rgba(0,0,0,.66),0 0 0 1px rgba(217,102,62,.74),0 0 34px rgba(217,102,62,.14)}
+  .hero .stage .c1{--rx:-8deg;--ry:30deg;--rz:-8deg;--tz:-90px;animation-duration:10.5s!important;animation-delay:-2s!important}
+  .hero .stage .c2{--rx:-7deg;--ry:-32deg;--rz:7deg;--tz:-58px;animation-duration:11.5s!important;animation-delay:-4s!important}
+  .hero .stage .c3{--rx:7deg;--ry:36deg;--rz:-10deg;--tz:48px;animation-duration:9.2s!important;animation-delay:-5s!important}
+  .hero .stage .c4{--rx:-2deg;--ry:-7deg;--rz:3deg;--tz:128px;animation-duration:10s!important;animation-delay:-1s!important;box-shadow:0 30px 72px rgba(0,0,0,.58),0 0 28px rgba(217,102,62,.08)}
+  .hero .stage .c5{--rx:8deg;--ry:-38deg;--rz:10deg;--tz:42px;animation-duration:9.8s!important;animation-delay:-6s!important}
+  .hero .stage .c6{--rx:-12deg;--ry:34deg;--rz:7deg;--tz:-42px;animation-duration:11s!important;animation-delay:-3s!important}
+  .hero .stage .c7{--rx:-11deg;--ry:-35deg;--rz:-8deg;--tz:18px;animation-duration:10.3s!important;animation-delay:-5.5s!important}
+  .hero .stage .card:hover{--tz:168px;box-shadow:0 34px 82px rgba(0,0,0,.66),0 0 0 1px rgba(217,102,62,.74),0 0 34px rgba(217,102,62,.14)}
 }
 @keyframes heroCardFloat3D{
-  from{transform:translate3d(0,-3px,var(--tz,0px)) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) rotateZ(var(--rz,0deg))}
-  to{transform:translate3d(0,5px,calc(var(--tz,0px) + 10px)) rotateX(calc(var(--rx,0deg) + .8deg)) rotateY(calc(var(--ry,0deg) + 1.2deg)) rotateZ(calc(var(--rz,0deg) + .45deg))}
+  from{transform:translate3d(-5px,-5px,var(--tz,0px)) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) rotateZ(var(--rz,0deg))}
+  to{transform:translate3d(7px,8px,calc(var(--tz,0px) + 18px)) rotateX(calc(var(--rx,0deg) + .8deg)) rotateY(calc(var(--ry,0deg) + 1.2deg)) rotateZ(calc(var(--rz,0deg) + .45deg))}
 }
 @media(max-width:720px){.brand .kz{font-size:0!important}.brand .kz::after{content:"ZK";font-size:19px!important;color:#f4f2ef}.hero .stage{perspective:none!important}.hero .stage .card{animation:microFloat 9s ease-in-out infinite alternate!important}}
 @media(prefers-reduced-motion:reduce){.hero .stage .card{animation:none!important}}

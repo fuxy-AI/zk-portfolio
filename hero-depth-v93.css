@@ -14,6 +14,16 @@
   .hero .stage .c7{--rx:-11deg;--ry:-35deg;--rz:-8deg;--tz:18px;animation-duration:10.3s!important;animation-delay:-5.5s!important}
   .hero .stage .card:hover{--tz:168px;box-shadow:0 34px 82px rgba(0,0,0,.66),0 0 0 1px rgba(217,102,62,.74),0 0 34px rgba(217,102,62,.14)}
 }
+@media(min-width:721px){
+  .hero .stage .c1{width:49%!important;height:39%!important;left:-2%!important;top:1%!important;z-index:5!important;--rx:-7deg;--ry:24deg;--rz:-7deg;--tz:-35px}
+  .hero .stage .c2{width:45%!important;height:34%!important;left:49%!important;top:8%!important;z-index:4!important;--rx:-6deg;--ry:-27deg;--rz:7deg;--tz:-58px}
+  .hero .stage .c3{width:29%!important;height:43%!important;left:-6%!important;top:40%!important;z-index:7!important;--rx:5deg;--ry:34deg;--rz:-5deg;--tz:38px}
+  .hero .stage .c4{width:53%!important;height:39%!important;left:23%!important;top:36%!important;z-index:9!important;--rx:2deg;--ry:-9deg;--rz:3deg;--tz:112px}
+  .hero .stage .c5{width:30%!important;height:38%!important;left:73%!important;top:42%!important;z-index:7!important;--rx:6deg;--ry:-36deg;--rz:6deg;--tz:42px}
+  .hero .stage .c6{width:55%!important;height:31%!important;left:31%!important;top:70%!important;z-index:11!important;--rx:8deg;--ry:-12deg;--rz:-5deg;--tz:154px}
+  .hero .stage .c7{width:25%!important;height:44%!important;left:37%!important;top:13%!important;z-index:2!important;--rx:-5deg;--ry:58deg;--rz:4deg;--tz:-115px}
+  .hero .stage .card{border-color:rgba(255,126,78,.42)!important;box-shadow:0 28px 68px rgba(0,0,0,.62),0 0 0 1px rgba(255,255,255,.025)!important}
+}
 @keyframes heroCardFloat3D{
   from{transform:translate3d(-5px,-5px,var(--tz,0px)) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) rotateZ(var(--rz,0deg))}
   to{transform:translate3d(7px,8px,calc(var(--tz,0px) + 18px)) rotateX(calc(var(--rx,0deg) + .8deg)) rotateY(calc(var(--ry,0deg) + 1.2deg)) rotateZ(calc(var(--rz,0deg) + .45deg))}

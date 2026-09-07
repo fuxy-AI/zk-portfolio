@@ -1,6 +1,8 @@
 @media(min-width:721px){
   .hero .eyebrow{transform:translate(-30px,-120px)!important}
   .hero .name .bottom{display:inline-block!important;transform-origin:left top!important;scale:1 .84}
+  .brand .kz{font-size:0!important}
+  .brand .kz::after{content:"ZK";font-size:32px!important;color:#f4f2ef}
   .hero .stage{perspective:1250px!important;perspective-origin:50% 46%;transform-style:preserve-3d!important}
   .hero .stage .card{transform-style:preserve-3d!important;backface-visibility:hidden;animation:heroCardFloat3D 9s ease-in-out infinite alternate!important;will-change:transform;box-shadow:0 24px 56px rgba(0,0,0,.5)}
   .hero .stage .c1{--rx:-4deg;--ry:18deg;--rz:-6deg;--tz:-28px;animation-duration:10.5s!important;animation-delay:-2s!important}
@@ -16,5 +18,5 @@
   from{transform:translate3d(0,-3px,var(--tz,0px)) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) rotateZ(var(--rz,0deg))}
   to{transform:translate3d(0,5px,calc(var(--tz,0px) + 10px)) rotateX(calc(var(--rx,0deg) + .8deg)) rotateY(calc(var(--ry,0deg) + 1.2deg)) rotateZ(calc(var(--rz,0deg) + .45deg))}
 }
-@media(max-width:720px){.hero .stage{perspective:none!important}.hero .stage .card{animation:microFloat 9s ease-in-out infinite alternate!important}}
+@media(max-width:720px){.brand .kz{font-size:0!important}.brand .kz::after{content:"ZK";font-size:19px!important;color:#f4f2ef}.hero .stage{perspective:none!important}.hero .stage .card{animation:microFloat 9s ease-in-out infinite alternate!important}}
 @media(prefers-reduced-motion:reduce){.hero .stage .card{animation:none!important}}

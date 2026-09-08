@@ -23,3 +23,8 @@
 }
 @media(max-width:720px){.brand .kz{font-size:0!important}.brand .kz::after{content:"ZK";font-size:19px!important;color:#f4f2ef}.hero .stage{perspective:none!important}.hero .stage .card{animation:microFloat 9s ease-in-out infinite alternate!important}}
 @media(prefers-reduced-motion:reduce){.hero .stage .card{animation:none!important}}
+
+/* District 9 portrait at the left edge of the mixed hero collage. */
+.hero .stage .card.district-hero{height:auto!important;aspect-ratio:auto!important}
+.hero .stage .card.district-hero img{height:auto!important;display:block;object-fit:contain}
+@media(min-width:721px){.hero .stage .card.district-hero{width:27%!important;left:-1%!important;top:35%!important;--ry:8deg;--rz:-5deg}}

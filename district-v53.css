@@ -62,3 +62,9 @@
 #district9 .workitem:nth-child(7){display:block!important;left:7%!important;top:65%!important;width:clamp(240px,34vw,480px)!important;height:auto!important;transform:rotate(-2deg);z-index:8}
 #district9 .workitem:nth-child(7) img{width:100%!important;height:auto!important;object-fit:contain!important}
 @media(max-width:720px){#district9 .workitem:nth-child(7){left:3%!important;top:360px!important;width:70%!important}}
+
+/* Wide Exosuit feature; original 04 joins the small render cards. */
+@media(min-width:981px){#district9 .workitem:nth-child(1){left:74%!important;width:clamp(360px,32vw,520px)!important}#district9:after{left:74%}}
+#district9 .workitem:nth-child(8){left:42%!important;top:25%!important;--card-rot:2.4deg;z-index:26}
+@media(max-width:980px){#district9 .workitem:nth-child(8){left:40%!important;top:25%!important}}
+@media(max-width:720px){#district9 .workitem:nth-child(8){left:50%!important;top:174px!important}}

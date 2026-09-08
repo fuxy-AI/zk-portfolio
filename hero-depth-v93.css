@@ -16,9 +16,10 @@
   .hero .stage .c6{width:25%!important;height:24%!important;left:13%!important;top:68%!important;z-index:3!important;--rx:-3deg;--ry:9deg;--rz:4deg;--tz:-4px;animation-duration:11s!important;animation-delay:-3s!important}
   .hero .stage .c7{width:29%!important;height:25%!important;left:43%!important;top:65%!important;z-index:4!important;--rx:-3deg;--ry:-10deg;--rz:-4deg;--tz:4px;animation-duration:10.3s!important;animation-delay:-5.5s!important}
 }
+/* Subtle pitch and a wider, centered floating path. */
 @keyframes heroCardFloat3D{
-  from{transform:translate3d(-2px,-2px,var(--tz,0px)) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) rotateZ(var(--rz,0deg))}
-  to{transform:translate3d(3px,4px,calc(var(--tz,0px) + 6px)) rotateX(calc(var(--rx,0deg) + .3deg)) rotateY(calc(var(--ry,0deg) + .45deg)) rotateZ(calc(var(--rz,0deg) + .2deg))}
+  from{transform:translate3d(-6px,-5px,var(--tz,0px)) rotateX(calc(var(--rx,0deg) - 1.2deg)) rotateY(calc(var(--ry,0deg) - .5deg)) rotateZ(calc(var(--rz,0deg) - .2deg))}
+  to{transform:translate3d(7px,7px,calc(var(--tz,0px) + 8px)) rotateX(calc(var(--rx,0deg) + 1.2deg)) rotateY(calc(var(--ry,0deg) + .7deg)) rotateZ(calc(var(--rz,0deg) + .3deg))}
 }
 @media(max-width:720px){.brand .kz{font-size:0!important}.brand .kz::after{content:"ZK";font-size:19px!important;color:#f4f2ef}.hero .stage{perspective:none!important}.hero .stage .card{animation:microFloat 9s ease-in-out infinite alternate!important}}
 @media(prefers-reduced-motion:reduce){.hero .stage .card{animation:none!important}}

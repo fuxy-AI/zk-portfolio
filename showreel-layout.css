@@ -1,0 +1,16 @@
+
+/* Balanced showreel: smaller video left, centered copy in the remaining column. */
+#showreel.showreel-section{
+box-sizing:border-box;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr)!important;
+gap:clamp(32px,4vw,64px)!important;align-items:center;
+margin:0 5vw;padding:clamp(36px,5vw,72px) 2vw!important;min-height:0!important;
+}
+#showreel .showreel-video{width:100%;max-width:640px;min-width:0;justify-self:start}
+#showreel .showreel-frame{box-sizing:border-box;width:100%;aspect-ratio:16/9}
+#showreel .showreel-copy{transform:none!important;min-width:0;width:100%;max-width:450px;justify-self:center;text-align:center}
+#showreel .showreel-copy h2{font-size:clamp(32px,3.7vw,60px)!important;line-height:1.08}
+#showreel .showreel-copy .lead,#showreel .showreel-text{margin-left:auto;margin-right:auto}
+#showreel .showreel-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+@media(max-width:900px){#showreel.showreel-section{grid-template-columns:1fr!important;gap:30px!important}
+#showreel .showreel-video{justify-self:center}
+#showreel .showreel-copy{max-width:520px}}

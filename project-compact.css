@@ -93,3 +93,11 @@ opacity:0;transition:opacity .45s ease;backface-visibility:hidden;
 #croki.section .workgrid .workitem img{display:block;transition:filter .4s ease}
 #croki.section .workgrid .workitem .cap{position:absolute;color:#eee;text-shadow:0 2px 8px #000;letter-spacing:.08em;pointer-events:none}
 #croki.section .project-sub{color:#8e969b}
+
+/* Two natural-ratio mosaics, each with one large image beside two stacked images. */
+#croki.section .workgrid .project-thumbs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:center}
+#croki .croki-mosaic{display:grid;gap:10px;align-items:start;min-width:0}
+#croki .croki-mosaic-stack{display:flex;flex-direction:column;gap:10px;min-width:0}
+#croki.section .workgrid .project-thumbs .workitem{width:100%!important;max-width:100%;align-self:start}
+#croki.section .workgrid .project-thumbs .workitem img{width:100%!important;height:auto!important;max-height:none!important}
+@media(max-width:520px){#croki.section .workgrid .project-thumbs{gap:12px}}

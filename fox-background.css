@@ -1,4 +1,4 @@
 /* Original fox artwork: center axis at left viewport edge. */
 .hero{isolation:isolate}
-.hero::before{content:"";position:absolute;left:0;top:calc(var(--header) - 7.2vw);width:48vw;aspect-ratio:1;background:url("assets/foxHeadLogo_D.png") center/contain no-repeat;transform:translateX(-50%);opacity:.15;mix-blend-mode:screen;pointer-events:none;z-index:-1}
-@media(max-width:720px){.hero::before{width:110vw;top:calc(var(--header) - 13.2vw)}}
+body::after{content:"";position:fixed;left:0;top:calc(var(--header) - 7.2vw);width:48vw;aspect-ratio:1;background:url("assets/foxHeadLogo_D.png") center/contain no-repeat;transform:translateX(-50%);opacity:.15;mix-blend-mode:screen;pointer-events:none;z-index:0}
+@media(max-width:720px){body::after{width:110vw;top:calc(var(--header) - 13.2vw)}}

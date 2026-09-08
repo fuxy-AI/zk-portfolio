@@ -46,3 +46,14 @@
   #district9 .workitem:nth-child(5){left:30%!important;top:162px!important}
   #district9 .workitem:nth-child(6){left:40%!important;top:180px!important}
 }
+/* Compact project spacing; preserve the card stack and featured portrait. */
+#selected.section,#district9.section{padding-top:56px!important;padding-bottom:44px!important;min-height:0!important}
+#selected>.eyebrow,#district9>.eyebrow{transform:none!important;margin-bottom:20px}
+#selected .selected-index,#district9 .selected-index{margin-bottom:18px}
+#district9 .project-sub{max-width:620px;line-height:1.65;margin-bottom:12px}
+@media(min-width:1051px){
+#district9 .workgrid{height:clamp(390px,32vw,520px)!important;margin-top:18px!important;padding-top:16px!important;padding-bottom:16px!important}
+#district9 .workitem:nth-child(1){width:clamp(280px,25vw,400px)!important}
+#district9:after{bottom:30px!important}
+}
+@media(max-width:720px){#selected.section,#district9.section{padding-top:38px!important;padding-bottom:34px!important}}

@@ -119,3 +119,20 @@ opacity:0;transition:opacity .45s ease;backface-visibility:hidden;
 #selected.section .workgrid .project-thumbs .workitem img{max-height:6vh}
 @media(max-width:900px){#selected.section .workgrid .project-thumbs .workitem img{max-height:75px}}
 @media(max-width:520px){#selected.section .workgrid{grid-template-columns:1fr}#selected.section .workgrid .project-thumbs{grid-template-columns:repeat(4,minmax(0,1fr))}}
+
+/* Shared feature column and intentionally varied thumbnail sizes. */
+@media(min-width:901px){
+:is(#selected,#district9,#croki,#gipsy-danger).section{grid-template-columns:minmax(220px,.8fr) minmax(0,1.7fr)!important}
+}
+:is(#selected,#district9,#croki,#gipsy-danger).section .workgrid{grid-template-columns:minmax(0,.85fr) minmax(0,1.35fr)!important}
+:is(#selected,#district9,#croki,#gipsy-danger).section .workgrid>.project-feature{justify-self:center!important;align-self:center!important}
+:is(#selected,#district9,#croki,#gipsy-danger).section .workgrid>.project-feature img{width:auto!important;height:auto!important;max-width:100%!important;max-height:28vh!important}
+:is(#selected,#district9,#croki,#gipsy-danger).section .workgrid .project-thumbs.varied-gallery{
+display:grid!important;grid-template-columns:repeat(var(--gallery-columns),minmax(0,1fr))!important;grid-template-rows:auto!important;gap:12px!important;align-items:center!important
+}
+:is(#selected,#district9,#croki,#gipsy-danger).section .gallery-column{display:flex;flex-direction:column;gap:12px;align-items:center;min-width:0}
+:is(#selected,#district9,#croki,#gipsy-danger).section .workgrid .project-thumbs .workitem{width:fit-content!important;align-self:center!important;grid-column:auto!important;grid-row:auto!important}
+:is(#selected,#district9,#croki,#gipsy-danger).section .workgrid .project-thumbs .workitem img{width:auto!important;height:auto!important;max-width:100%!important;max-height:var(--tile-height)!important}
+@media(max-width:900px){:is(#selected,#district9,#croki,#gipsy-danger).section .workgrid>.project-feature img{max-height:260px!important}}
+@media(max-width:520px){:is(#selected,#district9,#croki,#gipsy-danger).section .workgrid{grid-template-columns:1fr!important}
+:is(#selected,#district9,#croki,#gipsy-danger).section .workgrid .project-thumbs .workitem img{max-height:calc(var(--tile-height) * 1.5)!important}}

@@ -1,0 +1,30 @@
+
+/* Natural-ratio card stacks. Feature column keeps its previous width. */
+:is(#selected,#district9,#croki,#gipsy-danger).section .workgrid{
+grid-template-columns:minmax(0,calc((100% - 8px)/2.45)) minmax(0,1fr)!important;
+column-gap:clamp(24px,2.2vw,38px)!important;
+}
+:is(#selected,#district9,#croki,#gipsy-danger).section .workgrid .project-thumbs.block-gallery{
+display:block!important;position:relative!important;isolation:isolate;overflow:visible!important;
+}
+:is(#selected,#district9,#croki,#gipsy-danger).section .workgrid .project-thumbs.block-gallery>.workitem:nth-child(n){
+position:absolute!important;inset:auto!important;left:var(--card-x,0px)!important;top:var(--card-y,0px)!important;
+width:var(--card-w,0px)!important;height:var(--card-h,0px)!important;
+max-width:none!important;max-height:none!important;transform:none!important;
+z-index:var(--card-layer,1)!important;overflow:visible!important;
+background:#080b0c!important;box-shadow:0 8px 18px #0008!important;
+cursor:zoom-in;outline:none;
+}
+:is(#selected,#district9,#croki,#gipsy-danger).section .workgrid .project-thumbs.block-gallery>.workitem:nth-child(n)>img{
+display:block!important;width:100%!important;height:100%!important;
+object-fit:contain!important;max-width:none!important;max-height:none!important;
+}
+:is(#selected,#district9,#croki,#gipsy-danger).section .workgrid .project-thumbs.block-gallery>.workitem:nth-child(n):is(:hover,:focus-visible){
+z-index:100!important;transform:scale(1.085)!important;
+}
+:is(#selected,#district9,#croki,#gipsy-danger).section .workgrid .workitem:focus-visible::after{opacity:1}
+@media(max-width:520px){
+:is(#selected,#district9,#croki,#gipsy-danger).section .workgrid{
+grid-template-columns:1fr!important;row-gap:28px!important;
+}
+}

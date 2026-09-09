@@ -44,3 +44,10 @@ opacity:0;transition:opacity .45s ease;backface-visibility:hidden;
 /* Croki feature retains its original portrait ratio in the right-hand hero slot. */
 .hero .stage .card.croki-hero{height:auto!important;aspect-ratio:auto!important}
 .hero .stage .card.croki-hero img{height:auto!important;display:block;object-fit:contain}
+
+/* Gipsy Danger: frame follows the full image, including during hover. */
+.hero .stage .card.c2{height:auto!important;aspect-ratio:auto!important;line-height:0;scale:1;transition:scale .9s cubic-bezier(.22,.61,.36,1),filter .7s ease,box-shadow .7s ease!important}
+.hero .stage .card.c2 img{width:100%!important;height:auto!important;display:block;object-fit:contain!important;transform:none!important}
+.hero .stage .card.c2:hover{scale:1.045}
+.hero .stage .card.c2:hover img{transform:none!important}
+@media(prefers-reduced-motion:reduce){.hero .stage .card.c2{transition:none!important}}

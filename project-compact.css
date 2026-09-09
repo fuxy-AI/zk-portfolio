@@ -157,3 +157,33 @@ line-height:1.3!important;pointer-events:none;
 :is(#selected,#district9,#croki,#gipsy-danger).section .workgrid .project-thumbs.varied-gallery{
 align-items:center!important;height:auto!important;max-height:none!important;
 }
+
+/* Contained rectangular project mosaics with one consistent featured column. */
+:is(#selected,#district9,#croki,#gipsy-danger).section .workgrid{
+height:clamp(220px,29vh,330px)!important;grid-template-columns:minmax(0,1fr) minmax(0,1.45fr)!important;gap:8px!important;align-items:stretch!important;
+}
+:is(#selected,#district9,#croki,#gipsy-danger).section .workgrid .project-thumbs.block-gallery{
+display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;grid-template-rows:repeat(2,minmax(0,1fr))!important;grid-auto-flow:row dense;
+height:100%!important;max-height:none!important;gap:8px!important;align-items:stretch!important;justify-items:stretch!important;
+}
+:is(#selected,#district9,#croki,#gipsy-danger).section .workgrid .project-thumbs.block-gallery[data-count="7"]{grid-template-columns:repeat(4,minmax(0,1fr))!important}
+:is(#selected,#district9,#croki,#gipsy-danger).section .workgrid .project-thumbs.block-gallery[data-count="16"]{grid-template-columns:repeat(6,minmax(0,1fr))!important;grid-template-rows:repeat(3,minmax(0,1fr))!important}
+:is(#selected,#district9,#croki,#gipsy-danger).section .workgrid .workitem,
+:is(#selected,#district9,#croki,#gipsy-danger).section .workgrid .workitem.project-feature{
+position:relative!important;inset:auto!important;flex:none!important;margin:0!important;translate:none!important;
+width:100%!important;height:100%!important;max-height:none!important;min-height:0!important;
+align-self:stretch!important;justify-self:stretch!important;overflow:hidden!important;border-radius:2px;grid-column:auto!important;grid-row:auto!important;
+}
+:is(#selected,#district9,#croki,#gipsy-danger).section .workgrid .workitem img,
+:is(#selected,#district9,#croki,#gipsy-danger).section .workgrid>.project-feature img,
+:is(#selected,#district9,#croki,#gipsy-danger).section .workgrid .project-thumbs .workitem img{
+width:100%!important;height:100%!important;max-height:none!important;object-fit:cover!important;object-position:center;
+}
+:is(#selected,#district9,#croki,#gipsy-danger).section .workgrid .block-gallery[data-count="7"]>.workitem:first-child,
+:is(#selected,#district9,#croki,#gipsy-danger).section .workgrid .block-gallery[data-count="16"]>.workitem:nth-child(-n+2){grid-column:span 2!important}
+:is(#selected,#district9,#croki,#gipsy-danger).section .workgrid .workitem .cap{position:absolute!important;top:auto!important;bottom:5px!important;left:5px!important;line-height:1.3}
+@media(max-width:520px){
+:is(#selected,#district9,#croki,#gipsy-danger).section .workgrid{height:auto!important;grid-template-columns:1fr!important}
+:is(#selected,#district9,#croki,#gipsy-danger).section .workgrid>.project-feature{height:240px!important}
+:is(#selected,#district9,#croki,#gipsy-danger).section .workgrid .project-thumbs.block-gallery{height:240px!important}
+}

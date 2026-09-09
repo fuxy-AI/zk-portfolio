@@ -45,3 +45,28 @@ object-fit:contain!important;transform:none!important;
 width:min(100%,calc(240px * var(--feature-ratio,1.4)))!important;height:auto!important;
 }
 }
+
+/* Slow, restrained feature motion; animate the frame and image together. */
+@property --feature-drift-x { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --feature-tilt-x { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
+@property --feature-tilt-y { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
+:is(#selected,#district9,#croki,#gipsy-danger).section .workgrid>.workitem.project-feature{
+animation:projectFeatureDrift 8s ease-in-out infinite alternate!important;
+transform:perspective(1400px) translateX(var(--feature-drift-x)) rotateX(var(--feature-tilt-x)) rotateY(var(--feature-tilt-y)) scale(var(--feature-hover-scale,1))!important;
+transform-origin:center center!important;backface-visibility:hidden;will-change:transform;
+}
+#district9.section .workgrid>.workitem.project-feature{animation-delay:-3s!important}
+#gipsy-danger.section .workgrid>.workitem.project-feature{animation-delay:-6s!important}
+#croki.section .workgrid>.workitem.project-feature{animation-delay:-9s!important}
+:is(#selected,#district9,#croki,#gipsy-danger).section .workgrid>.workitem.project-feature:is(:hover,:focus-visible){
+--feature-hover-scale:1.035;
+}
+@keyframes projectFeatureDrift{
+from{--feature-drift-x:-3px;--feature-tilt-x:-.65deg;--feature-tilt-y:.85deg}
+to{--feature-drift-x:3px;--feature-tilt-x:.65deg;--feature-tilt-y:-.85deg}
+}
+@media(prefers-reduced-motion:reduce){
+:is(#selected,#district9,#croki,#gipsy-danger).section .workgrid>.workitem.project-feature{
+animation:none!important;transform:scale(var(--feature-hover-scale,1))!important;
+}
+}

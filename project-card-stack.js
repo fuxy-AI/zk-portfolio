@@ -1,5 +1,10 @@
 (()=>{
 function boot(){
+document.querySelectorAll(':is(#selected,#district9,#croki,#gipsy-danger) .project-feature').forEach(card=>{
+const image=card.querySelector('img');
+function fit(){if(image.naturalWidth&&image.naturalHeight)card.style.setProperty('--feature-ratio',String(image.naturalWidth/image.naturalHeight));}
+image.addEventListener('load',fit);fit();
+});
 const galleries=[...document.querySelectorAll(':is(#selected,#district9,#croki,#gipsy-danger) .project-thumbs')];
 function arrange(gallery){
 const cards=[...gallery.children],W=gallery.clientWidth,H=gallery.clientHeight;
@@ -8,13 +13,15 @@ const rows=cards.length>10?3:2,perRow=Math.ceil(cards.length/rows);
 for(let row=0;row<rows;row++){
 const group=cards.slice(row*perRow,(row+1)*perRow);
 if(!group.length)continue;
-const targetH=H/(rows-.20*(rows-1));
+const emphasized=gallery.closest('section').id==='selected'&&row===0;
+const overlap=emphasized?.48:.18;
+const targetH=H/(rows-.20*(rows-1))*(emphasized?1.5:1);
 let sizes=group.map((card,i)=>{
 const im=card.querySelector('img'),ratio=im.naturalWidth&&im.naturalHeight?im.naturalWidth/im.naturalHeight:1;
 const h=targetH*[.94,1,.88, .97, .91,1][i%6];
 return {w:h*ratio,h};
 });
-let span=sizes.reduce((sum,s,i)=>sum+s.w-(i?.18*Math.min(s.w,sizes[i-1].w):0),0);
+let span=sizes.reduce((sum,s,i)=>sum+s.w-(i?overlap*Math.min(s.w,sizes[i-1].w):0),0);
 const factor=Math.min(1,(W-4)/span);
 sizes=sizes.map(s=>({w:s.w*factor,h:s.h*factor}));
 span*=factor;
@@ -28,8 +35,8 @@ card.style.setProperty('--card-x',x.toFixed(2)+'px');
 card.style.setProperty('--card-y',y.toFixed(2)+'px');
 card.style.setProperty('--card-w',w.toFixed(2)+'px');
 card.style.setProperty('--card-h',h.toFixed(2)+'px');
-card.style.setProperty('--card-layer',String(row*perRow+i+1));
-x+=w;if(i+1<sizes.length)x-=.18*Math.min(w,sizes[i+1].w);
+card.style.setProperty('--card-layer',String(emphasized?40+i:row*perRow+i+1));
+x+=w;if(i+1<sizes.length)x-=overlap*Math.min(w,sizes[i+1].w);
 });
 }
 }

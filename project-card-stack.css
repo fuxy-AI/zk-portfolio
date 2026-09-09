@@ -28,3 +28,20 @@ z-index:100!important;transform:scale(1.085)!important;
 grid-template-columns:1fr!important;row-gap:28px!important;
 }
 }
+
+/* Feature frame follows the complete image, including during hover. */
+:is(#selected,#district9,#croki,#gipsy-danger).section .workgrid>.workitem.project-feature{
+width:min(100%,calc(clamp(220px,29vh,330px) * var(--feature-ratio,1.4)))!important;
+height:auto!important;aspect-ratio:var(--feature-ratio,1.4)!important;
+max-height:none!important;align-self:center!important;justify-self:start!important;
+overflow:visible!important;background:transparent!important;
+}
+:is(#selected,#district9,#croki,#gipsy-danger).section .workgrid>.workitem.project-feature>img{
+width:100%!important;height:auto!important;max-height:none!important;
+object-fit:contain!important;transform:none!important;
+}
+@media(max-width:520px){
+:is(#selected,#district9,#croki,#gipsy-danger).section .workgrid>.workitem.project-feature{
+width:min(100%,calc(240px * var(--feature-ratio,1.4)))!important;height:auto!important;
+}
+}

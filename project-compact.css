@@ -1,91 +1,91 @@
 
 /* Compact project panels: copy, featured image and spaced thumbnails. */
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section{
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section{
 box-sizing:border-box!important;display:grid!important;grid-template-columns:minmax(220px,.8fr) minmax(0,1.7fr);align-items:center;gap:clamp(20px,3vw,48px);
 height:clamp(280px,42vh,460px)!important;min-height:0!important;
 margin:0 5vw!important;padding:28px 2vw!important;overflow:visible!important;
 }
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section:after{display:none!important}
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .project-copy{min-width:0}
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .project-copy>.eyebrow{display:none}
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .selected-index{font-size:8px;margin:0 0 14px!important}
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section h2{font-size:clamp(28px,3.3vw,54px)!important;line-height:1.05;margin:0 0 14px!important}
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section :is(.lead,.project-sub){font-size:12px;line-height:1.65;margin:0!important;max-width:410px}
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .sw-hint{font-size:7px;line-height:1.7;margin-top:18px}
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);align-items:center;gap:16px!important;height:100%!important;min-height:0;padding:0!important;margin:0!important;position:relative!important}
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .project-thumbs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:10px;height:100%;max-height:280px;min-width:0}
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .workitem{
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section:after{display:none!important}
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .project-copy{min-width:0}
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .project-copy>.eyebrow{display:none}
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .selected-index{font-size:8px;margin:0 0 14px!important}
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section h2{font-size:clamp(28px,3.3vw,54px)!important;line-height:1.05;margin:0 0 14px!important}
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section :is(.lead,.project-sub){font-size:12px;line-height:1.65;margin:0!important;max-width:410px}
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .sw-hint{font-size:7px;line-height:1.7;margin-top:18px}
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);align-items:center;gap:16px!important;height:100%!important;min-height:0;padding:0!important;margin:0!important;position:relative!important}
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .project-thumbs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:10px;height:100%;max-height:280px;min-width:0}
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .workitem{
 position:relative!important;inset:auto!important;translate:none!important;transform:none!important;animation:none!important;
 width:100%!important;height:100%!important;min-width:0;min-height:0;aspect-ratio:auto!important;margin:0!important;display:block!important;
 border:1px solid rgba(255,255,255,.12)!important;background:rgba(5,8,9,.65)!important;overflow:hidden!important;box-shadow:none!important;z-index:1!important;
 transition:transform .6s ease,border-color .6s ease!important;
 }
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .workitem img{width:100%!important;height:100%!important;object-fit:contain!important;border:0!important;padding:0!important;box-shadow:none!important;transform:none!important}
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .workitem.project-feature{height:100%!important;max-height:300px;border-color:rgba(217,102,62,.3)!important}
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .workitem:hover{transform:scale(1.035)!important;z-index:3!important;border-color:rgba(217,102,62,.65)!important}
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .workitem .cap{font-size:6px!important;left:5px!important;bottom:5px!important}
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .workitem img{width:100%!important;height:100%!important;object-fit:contain!important;border:0!important;padding:0!important;box-shadow:none!important;transform:none!important}
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .workitem.project-feature{height:100%!important;max-height:300px;border-color:rgba(217,102,62,.3)!important}
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .workitem:hover{transform:scale(1.035)!important;z-index:3!important;border-color:rgba(217,102,62,.65)!important}
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .workitem .cap{font-size:6px!important;left:5px!important;bottom:5px!important}
 #selected.section .workgrid .project-thumbs{grid-template-columns:repeat(2,minmax(0,1fr))}
 @media(max-width:900px){
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section{height:auto!important;grid-template-columns:1fr;padding:28px 2vw!important}
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid{height:260px!important}
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .project-copy :is(.lead,.project-sub){max-width:620px}
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section{height:auto!important;grid-template-columns:1fr;padding:28px 2vw!important}
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid{height:260px!important}
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .project-copy :is(.lead,.project-sub){max-width:620px}
 }
-@media(max-width:520px){:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid{grid-template-columns:1fr;height:auto!important}
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .workitem.project-feature{height:220px!important}
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .project-thumbs{height:180px}
+@media(max-width:520px){:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid{grid-template-columns:1fr;height:auto!important}
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .workitem.project-feature{height:220px!important}
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .project-thumbs{height:180px}
 }
-@media(prefers-reduced-motion:reduce){:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .workitem{transition:none!important}}
+@media(prefers-reduced-motion:reduce){:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .workitem{transition:none!important}}
 
 /* Frames follow the visible image; no fixed-height letterboxing. */
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid{height:auto!important}
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .project-thumbs{height:auto;max-height:none;grid-template-rows:auto;align-items:center;justify-items:center;gap:12px}
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .workitem,
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .workitem.project-feature{
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid{height:auto!important}
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .project-thumbs{height:auto;max-height:none;grid-template-rows:auto;align-items:center;justify-items:center;gap:12px}
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .workitem,
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .workitem.project-feature{
 width:fit-content!important;max-width:100%;height:auto!important;max-height:none!important;
 justify-self:center;align-self:center;background:transparent!important;border:0!important;overflow:visible!important;line-height:0;
 }
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .workitem img{
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .workitem img{
 box-sizing:border-box;width:auto!important;max-width:100%!important;height:auto!important;max-height:14vh;
 border:1px solid rgba(255,255,255,.16)!important;border-radius:2px;
 }
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .workitem.project-feature img{max-height:30vh;border-color:rgba(217,102,62,.36)!important}
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .workitem .cap{line-height:1.3}
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .workitem:hover{transform:scale(1.085)!important;z-index:90!important}
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .workitem:hover img{border-color:rgba(217,102,62,.8)!important}
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .workitem.project-feature img{max-height:30vh;border-color:rgba(217,102,62,.36)!important}
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .workitem .cap{line-height:1.3}
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .workitem:hover{transform:scale(1.085)!important;z-index:90!important}
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .workitem:hover img{border-color:rgba(217,102,62,.8)!important}
 #district9.section .workgrid .project-thumbs{grid-template-columns:repeat(6,minmax(0,1fr));grid-template-rows:auto auto}
 #district9.section .workgrid .project-thumbs>.workitem:nth-child(6){grid-column:1 / -1;grid-row:2}
 #district9.section .workgrid .project-thumbs>.workitem:nth-child(6) img{max-height:12vh}
 #district9.section .workgrid .project-thumbs>.workitem:nth-child(7){grid-column:6;grid-row:1}
 @media(max-width:900px){
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid{height:auto!important}
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .workitem img{max-height:140px}
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .workitem.project-feature img{max-height:260px}
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid{height:auto!important}
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .workitem img{max-height:140px}
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .workitem.project-feature img{max-height:260px}
 #district9.section .workgrid .project-thumbs>.workitem:nth-child(6) img{max-height:110px}
 }
 @media(max-width:520px){
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .project-thumbs{height:auto}
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .project-thumbs{height:auto}
 #district9.section .workgrid .project-thumbs{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:auto auto auto}
 #district9.section .workgrid .project-thumbs>.workitem:nth-child(6){grid-row:3}
 #district9.section .workgrid .project-thumbs>.workitem:nth-child(7){grid-column:3;grid-row:2}
 }
 
 /* Stable hover ring: fade a separate layer instead of recoloring the image edge. */
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .workitem{
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .workitem{
 backface-visibility:hidden;will-change:transform;isolation:isolate;
 transition:transform .6s cubic-bezier(.22,.61,.36,1)!important;
 }
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .workitem::after{
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .workitem::after{
 content:"";position:absolute;inset:0;box-sizing:border-box;pointer-events:none;z-index:4;
 border:2px solid #e77d50;border-radius:2px;
 box-shadow:0 0 12px rgba(231,125,80,.3),0 0 26px rgba(217,102,62,.18),inset 0 0 5px rgba(231,125,80,.12);
 opacity:0;transition:opacity .45s ease;backface-visibility:hidden;
 }
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .workitem:hover::after{opacity:1}
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .workitem:hover img{border-color:rgba(255,255,255,.16)!important}
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .workitem.project-feature:hover img{border-color:rgba(217,102,62,.36)!important}
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .workitem:hover::after{opacity:1}
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .workitem:hover img{border-color:rgba(255,255,255,.16)!important}
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .workitem.project-feature:hover img{border-color:rgba(217,102,62,.36)!important}
 @media(prefers-reduced-motion:reduce){
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .workitem,
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .workitem::after{transition:none!important}
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .workitem,
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .workitem::after{transition:none!important}
 }
 
 #croki.section .workgrid .project-thumbs{grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:auto auto}
@@ -122,98 +122,98 @@ opacity:0;transition:opacity .45s ease;backface-visibility:hidden;
 
 /* Shared feature column and intentionally varied thumbnail sizes. */
 @media(min-width:901px){
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section{grid-template-columns:minmax(220px,.8fr) minmax(0,1.7fr)!important}
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section{grid-template-columns:minmax(220px,.8fr) minmax(0,1.7fr)!important}
 }
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid{grid-template-columns:minmax(0,.85fr) minmax(0,1.35fr)!important}
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid>.project-feature{justify-self:center!important;align-self:center!important}
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid>.project-feature img{width:auto!important;height:auto!important;max-width:100%!important;max-height:28vh!important}
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .project-thumbs.varied-gallery{
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid{grid-template-columns:minmax(0,.85fr) minmax(0,1.35fr)!important}
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid>.project-feature{justify-self:center!important;align-self:center!important}
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid>.project-feature img{width:auto!important;height:auto!important;max-width:100%!important;max-height:28vh!important}
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .project-thumbs.varied-gallery{
 display:grid!important;grid-template-columns:repeat(var(--gallery-columns),minmax(0,1fr))!important;grid-template-rows:auto!important;gap:12px!important;align-items:center!important
 }
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .gallery-column{display:flex;flex-direction:column;gap:12px;align-items:center;min-width:0}
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .project-thumbs .workitem{width:fit-content!important;align-self:center!important;grid-column:auto!important;grid-row:auto!important}
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .project-thumbs .workitem img{width:auto!important;height:auto!important;max-width:100%!important;max-height:var(--tile-height)!important}
-@media(max-width:900px){:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid>.project-feature img{max-height:260px!important}}
-@media(max-width:520px){:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid{grid-template-columns:1fr!important}
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .project-thumbs .workitem img{max-height:calc(var(--tile-height) * 1.5)!important}}
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .gallery-column{display:flex;flex-direction:column;gap:12px;align-items:center;min-width:0}
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .project-thumbs .workitem{width:fit-content!important;align-self:center!important;grid-column:auto!important;grid-row:auto!important}
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .project-thumbs .workitem img{width:auto!important;height:auto!important;max-width:100%!important;max-height:var(--tile-height)!important}
+@media(max-width:900px){:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid>.project-feature img{max-height:260px!important}}
+@media(max-width:520px){:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid{grid-template-columns:1fr!important}
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .project-thumbs .workitem img{max-height:calc(var(--tile-height) * 1.5)!important}}
 
 /* Reset inherited horizontal card flex sizing inside the new vertical columns. */
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section{
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section{
 height:auto!important;min-height:clamp(280px,42vh,460px)!important;
 padding-top:32px!important;padding-bottom:32px!important;isolation:isolate;
 }
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .gallery-column{
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .gallery-column{
 justify-content:center;align-self:center;gap:12px;
 }
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .gallery-column>.workitem{
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .gallery-column>.workitem{
 flex:0 0 auto!important;position:relative!important;inset:auto!important;
 translate:none!important;float:none!important;margin:0!important;
 height:auto!important;min-height:0!important;max-height:none!important;
 }
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .gallery-column>.workitem .cap{
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .gallery-column>.workitem .cap{
 position:absolute!important;top:auto!important;right:auto!important;left:5px!important;bottom:5px!important;
 line-height:1.3!important;pointer-events:none;
 }
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .project-thumbs.varied-gallery{
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .project-thumbs.varied-gallery{
 align-items:center!important;height:auto!important;max-height:none!important;
 }
 
 /* Contained rectangular project mosaics with one consistent featured column. */
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid{
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid{
 height:clamp(220px,29vh,330px)!important;grid-template-columns:minmax(0,1fr) minmax(0,1.45fr)!important;gap:8px!important;align-items:stretch!important;
 }
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .project-thumbs.block-gallery{
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .project-thumbs.block-gallery{
 display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;grid-template-rows:repeat(2,minmax(0,1fr))!important;grid-auto-flow:row dense;
 height:100%!important;max-height:none!important;gap:8px!important;align-items:stretch!important;justify-items:stretch!important;
 }
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .project-thumbs.block-gallery[data-count="7"]{grid-template-columns:repeat(4,minmax(0,1fr))!important}
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .project-thumbs.block-gallery[data-count="16"]{grid-template-columns:repeat(6,minmax(0,1fr))!important;grid-template-rows:repeat(3,minmax(0,1fr))!important}
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .workitem,
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .workitem.project-feature{
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .project-thumbs.block-gallery[data-count="7"]{grid-template-columns:repeat(4,minmax(0,1fr))!important}
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .project-thumbs.block-gallery[data-count="16"]{grid-template-columns:repeat(6,minmax(0,1fr))!important;grid-template-rows:repeat(3,minmax(0,1fr))!important}
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .workitem,
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .workitem.project-feature{
 position:relative!important;inset:auto!important;flex:none!important;margin:0!important;translate:none!important;
 width:100%!important;height:100%!important;max-height:none!important;min-height:0!important;
 align-self:stretch!important;justify-self:stretch!important;overflow:hidden!important;border-radius:2px;grid-column:auto!important;grid-row:auto!important;
 }
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .workitem img,
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid>.project-feature img,
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .project-thumbs .workitem img{
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .workitem img,
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid>.project-feature img,
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .project-thumbs .workitem img{
 width:100%!important;height:100%!important;max-height:none!important;object-fit:cover!important;object-position:center;
 }
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .block-gallery[data-count="7"]>.workitem:first-child,
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .block-gallery[data-count="16"]>.workitem:nth-child(-n+2){grid-column:span 2!important}
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .workitem .cap{position:absolute!important;top:auto!important;bottom:5px!important;left:5px!important;line-height:1.3}
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .block-gallery[data-count="7"]>.workitem:first-child,
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .block-gallery[data-count="16"]>.workitem:nth-child(-n+2){grid-column:span 2!important}
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .workitem .cap{position:absolute!important;top:auto!important;bottom:5px!important;left:5px!important;line-height:1.3}
 @media(max-width:520px){
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid{height:auto!important;grid-template-columns:1fr!important}
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid>.project-feature{height:240px!important}
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .project-thumbs.block-gallery{height:240px!important}
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid{height:auto!important;grid-template-columns:1fr!important}
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid>.project-feature{height:240px!important}
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .project-thumbs.block-gallery{height:240px!important}
 }
 
 /* Keep each gallery, including its hover expansion, inside its own project panel. */
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section{
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section{
 position:relative!important;isolation:isolate;overflow:hidden!important;
 height:auto!important;padding-top:40px!important;padding-bottom:40px!important;
 }
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid,
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .project-thumbs.block-gallery{
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid,
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .project-thumbs.block-gallery{
 box-sizing:border-box!important;min-width:0!important;min-height:0!important;
 }
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .workitem{
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .workitem{
 box-sizing:border-box!important;min-height:0!important;min-width:0!important;max-width:100%!important;max-height:100%!important;
 }
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .workitem img{display:block!important;min-height:0!important;min-width:0!important}
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .workitem img{display:block!important;min-height:0!important;min-width:0!important}
 
 /* Pack thumbnails in reading order; any unused cell is at the bottom right. */
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .project-thumbs.block-gallery{
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .project-thumbs.block-gallery{
 grid-auto-flow:row!important;justify-items:stretch!important;align-items:stretch!important;gap:8px!important;
 grid-template-columns:repeat(3,minmax(0,1fr))!important;grid-template-rows:repeat(2,minmax(0,1fr))!important;
 }
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .project-thumbs.block-gallery[data-count="4"]{grid-template-columns:repeat(2,minmax(0,1fr))!important}
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .project-thumbs.block-gallery[data-count="7"]{grid-template-columns:repeat(4,minmax(0,1fr))!important}
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .project-thumbs.block-gallery[data-count="16"]{grid-template-columns:repeat(4,minmax(0,1fr))!important;grid-template-rows:repeat(4,minmax(0,1fr))!important}
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .project-thumbs.block-gallery>.workitem:nth-child(n){
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .project-thumbs.block-gallery[data-count="4"]{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .project-thumbs.block-gallery[data-count="7"]{grid-template-columns:repeat(4,minmax(0,1fr))!important}
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .project-thumbs.block-gallery[data-count="16"]{grid-template-columns:repeat(4,minmax(0,1fr))!important;grid-template-rows:repeat(4,minmax(0,1fr))!important}
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .project-thumbs.block-gallery>.workitem:nth-child(n){
 grid-column:auto!important;grid-row:auto!important;justify-self:stretch!important;align-self:stretch!important;
 width:100%!important;height:100%!important;max-width:none!important;max-height:none!important;flex:none!important;
 }
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .project-thumbs.block-gallery>.workitem:nth-child(n)>img{
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .project-thumbs.block-gallery>.workitem:nth-child(n)>img{
 width:100%!important;height:100%!important;max-width:none!important;max-height:none!important;object-fit:cover!important;
 }

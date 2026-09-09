@@ -1,13 +1,13 @@
 
 /* Natural-ratio card stacks. Feature column keeps its previous width. */
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid{
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid{
 grid-template-columns:minmax(0,calc((100% - 8px)/2.45)) minmax(0,1fr)!important;
 column-gap:clamp(24px,2.2vw,38px)!important;
 }
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .project-thumbs.block-gallery{
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .project-thumbs.block-gallery{
 display:block!important;position:relative!important;isolation:isolate;overflow:visible!important;
 }
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .project-thumbs.block-gallery>.workitem:nth-child(n){
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .project-thumbs.block-gallery>.workitem:nth-child(n){
 position:absolute!important;inset:auto!important;left:var(--card-x,0px)!important;top:var(--card-y,0px)!important;
 width:var(--card-w,0px)!important;height:var(--card-h,0px)!important;
 max-width:none!important;max-height:none!important;transform:none!important;
@@ -15,33 +15,33 @@ z-index:var(--card-layer,1)!important;overflow:visible!important;
 background:#080b0c!important;box-shadow:0 8px 18px #0008!important;
 cursor:zoom-in;outline:none;
 }
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .project-thumbs.block-gallery>.workitem:nth-child(n)>img{
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .project-thumbs.block-gallery>.workitem:nth-child(n)>img{
 display:block!important;width:100%!important;height:100%!important;
 object-fit:contain!important;max-width:none!important;max-height:none!important;
 }
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .project-thumbs.block-gallery>.workitem:nth-child(n):is(:hover,:focus-visible){
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .project-thumbs.block-gallery>.workitem:nth-child(n):is(:hover,:focus-visible){
 z-index:100!important;transform:scale(1.085)!important;
 }
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid .workitem:focus-visible::after{opacity:1}
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid .workitem:focus-visible::after{opacity:1}
 @media(max-width:520px){
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid{
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid{
 grid-template-columns:1fr!important;row-gap:28px!important;
 }
 }
 
 /* Feature frame follows the complete image, including during hover. */
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid>.workitem.project-feature{
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid>.workitem.project-feature{
 width:min(100%,calc(clamp(220px,29vh,330px) * var(--feature-ratio,1.4)))!important;
 height:auto!important;aspect-ratio:var(--feature-ratio,1.4)!important;
 max-height:none!important;align-self:center!important;justify-self:start!important;
 overflow:visible!important;background:transparent!important;
 }
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid>.workitem.project-feature>img{
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid>.workitem.project-feature>img{
 width:100%!important;height:auto!important;max-height:none!important;
 object-fit:contain!important;transform:none!important;
 }
 @media(max-width:520px){
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid>.workitem.project-feature{
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid>.workitem.project-feature{
 width:min(100%,calc(240px * var(--feature-ratio,1.4)))!important;height:auto!important;
 }
 }
@@ -50,7 +50,7 @@ width:min(100%,calc(240px * var(--feature-ratio,1.4)))!important;height:auto!imp
 @property --feature-drift-x { syntax: "<length>"; inherits: false; initial-value: 0px; }
 @property --feature-tilt-x { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
 @property --feature-tilt-y { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid>.workitem.project-feature{
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid>.workitem.project-feature{
 animation:projectFeatureDrift 8s ease-in-out infinite alternate!important;
 transform:perspective(1400px) translateX(var(--feature-drift-x)) rotateX(var(--feature-tilt-x)) rotateY(var(--feature-tilt-y)) scale(var(--feature-hover-scale,1))!important;
 transform-origin:center center!important;backface-visibility:hidden;will-change:transform;
@@ -58,7 +58,7 @@ transform-origin:center center!important;backface-visibility:hidden;will-change:
 #district9.section .workgrid>.workitem.project-feature{animation-delay:-3s!important}
 #gipsy-danger.section .workgrid>.workitem.project-feature{animation-delay:-6s!important}
 #croki.section .workgrid>.workitem.project-feature{animation-delay:-9s!important}
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid>.workitem.project-feature:is(:hover,:focus-visible){
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid>.workitem.project-feature:is(:hover,:focus-visible){
 --feature-hover-scale:1.035;
 }
 @keyframes projectFeatureDrift{
@@ -66,7 +66,7 @@ from{--feature-drift-x:-3px;--feature-tilt-x:-.65deg;--feature-tilt-y:.85deg}
 to{--feature-drift-x:3px;--feature-tilt-x:.65deg;--feature-tilt-y:-.85deg}
 }
 @media(prefers-reduced-motion:reduce){
-:is(#selected,#district9,#croki,#gipsy-danger,#space-marine).section .workgrid>.workitem.project-feature{
+:is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi).section .workgrid>.workitem.project-feature{
 animation:none!important;transform:scale(var(--feature-hover-scale,1))!important;
 }
 }
@@ -74,3 +74,7 @@ animation:none!important;transform:scale(var(--feature-hover-scale,1))!important
 #space-marine.section .workgrid>.workitem.project-feature{animation-duration:6.5s!important;animation-delay:-2s!important}
 #space-marine.section .project-sub{color:#8e969b}
 #space-marine.section .workitem .cap{color:#eee;text-shadow:0 2px 8px #000;letter-spacing:.08em;pointer-events:none}
+
+#sazabi.section .workgrid>.workitem.project-feature{animation-delay:-4.5s!important}
+#sazabi.section .project-sub{color:#8e969b}
+#sazabi.section .workitem .cap{color:#eee;text-shadow:0 2px 8px #000;letter-spacing:.08em;pointer-events:none}

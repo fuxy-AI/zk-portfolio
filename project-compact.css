@@ -112,3 +112,10 @@ opacity:0;transition:opacity .45s ease;backface-visibility:hidden;
 #gipsy-danger.section .workitem img{display:block}
 #gipsy-danger.section .workitem .cap{position:absolute;color:#eee;text-shadow:0 2px 8px #000;letter-spacing:.08em;pointer-events:none}
 #gipsy-danger.section .project-sub{color:#8e969b}
+
+/* Complete Kshatriya gallery with natural-ratio render and model thumbnails. */
+#selected.section .workgrid{grid-template-columns:minmax(0,.8fr) minmax(0,1.4fr)}
+#selected.section .workgrid .project-thumbs{grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(4,auto);gap:10px}
+#selected.section .workgrid .project-thumbs .workitem img{max-height:6vh}
+@media(max-width:900px){#selected.section .workgrid .project-thumbs .workitem img{max-height:75px}}
+@media(max-width:520px){#selected.section .workgrid{grid-template-columns:1fr}#selected.section .workgrid .project-thumbs{grid-template-columns:repeat(4,minmax(0,1fr))}}

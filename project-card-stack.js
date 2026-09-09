@@ -10,8 +10,9 @@ function arrange(gallery){
 const cards=[...gallery.children],W=gallery.clientWidth,H=gallery.clientHeight;
 if(!W||!H||!cards.length)return;
 const rows=cards.length>10?3:2,perRow=Math.ceil(cards.length/rows);
+const curated=gallery.closest('section').id==='selected'&&cards.length===13?[cards.slice(0,4),cards.slice(4,8),cards.slice(8)]:null;
 for(let row=0;row<rows;row++){
-const group=cards.slice(row*perRow,(row+1)*perRow);
+const group=curated?curated[row]:cards.slice(row*perRow,(row+1)*perRow);
 if(!group.length)continue;
 const emphasized=gallery.closest('section').id==='selected'&&row===0;
 const overlap=emphasized?.48:.18;

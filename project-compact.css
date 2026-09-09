@@ -201,3 +201,19 @@ box-sizing:border-box!important;min-width:0!important;min-height:0!important;
 box-sizing:border-box!important;min-height:0!important;min-width:0!important;max-width:100%!important;max-height:100%!important;
 }
 :is(#selected,#district9,#croki,#gipsy-danger).section .workgrid .workitem img{display:block!important;min-height:0!important;min-width:0!important}
+
+/* Pack thumbnails in reading order; any unused cell is at the bottom right. */
+:is(#selected,#district9,#croki,#gipsy-danger).section .workgrid .project-thumbs.block-gallery{
+grid-auto-flow:row!important;justify-items:stretch!important;align-items:stretch!important;gap:8px!important;
+grid-template-columns:repeat(3,minmax(0,1fr))!important;grid-template-rows:repeat(2,minmax(0,1fr))!important;
+}
+:is(#selected,#district9,#croki,#gipsy-danger).section .workgrid .project-thumbs.block-gallery[data-count="4"]{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+:is(#selected,#district9,#croki,#gipsy-danger).section .workgrid .project-thumbs.block-gallery[data-count="7"]{grid-template-columns:repeat(4,minmax(0,1fr))!important}
+:is(#selected,#district9,#croki,#gipsy-danger).section .workgrid .project-thumbs.block-gallery[data-count="16"]{grid-template-columns:repeat(4,minmax(0,1fr))!important;grid-template-rows:repeat(4,minmax(0,1fr))!important}
+:is(#selected,#district9,#croki,#gipsy-danger).section .workgrid .project-thumbs.block-gallery>.workitem:nth-child(n){
+grid-column:auto!important;grid-row:auto!important;justify-self:stretch!important;align-self:stretch!important;
+width:100%!important;height:100%!important;max-width:none!important;max-height:none!important;flex:none!important;
+}
+:is(#selected,#district9,#croki,#gipsy-danger).section .workgrid .project-thumbs.block-gallery>.workitem:nth-child(n)>img{
+width:100%!important;height:100%!important;max-width:none!important;max-height:none!important;object-fit:cover!important;
+}

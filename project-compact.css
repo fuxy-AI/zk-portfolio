@@ -136,3 +136,24 @@ display:grid!important;grid-template-columns:repeat(var(--gallery-columns),minma
 @media(max-width:900px){:is(#selected,#district9,#croki,#gipsy-danger).section .workgrid>.project-feature img{max-height:260px!important}}
 @media(max-width:520px){:is(#selected,#district9,#croki,#gipsy-danger).section .workgrid{grid-template-columns:1fr!important}
 :is(#selected,#district9,#croki,#gipsy-danger).section .workgrid .project-thumbs .workitem img{max-height:calc(var(--tile-height) * 1.5)!important}}
+
+/* Reset inherited horizontal card flex sizing inside the new vertical columns. */
+:is(#selected,#district9,#croki,#gipsy-danger).section{
+height:auto!important;min-height:clamp(280px,42vh,460px)!important;
+padding-top:32px!important;padding-bottom:32px!important;isolation:isolate;
+}
+:is(#selected,#district9,#croki,#gipsy-danger).section .workgrid .gallery-column{
+justify-content:center;align-self:center;gap:12px;
+}
+:is(#selected,#district9,#croki,#gipsy-danger).section .workgrid .gallery-column>.workitem{
+flex:0 0 auto!important;position:relative!important;inset:auto!important;
+translate:none!important;float:none!important;margin:0!important;
+height:auto!important;min-height:0!important;max-height:none!important;
+}
+:is(#selected,#district9,#croki,#gipsy-danger).section .workgrid .gallery-column>.workitem .cap{
+position:absolute!important;top:auto!important;right:auto!important;left:5px!important;bottom:5px!important;
+line-height:1.3!important;pointer-events:none;
+}
+:is(#selected,#district9,#croki,#gipsy-danger).section .workgrid .project-thumbs.varied-gallery{
+align-items:center!important;height:auto!important;max-height:none!important;
+}

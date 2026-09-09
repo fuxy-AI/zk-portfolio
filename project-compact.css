@@ -187,3 +187,17 @@ width:100%!important;height:100%!important;max-height:none!important;object-fit:
 :is(#selected,#district9,#croki,#gipsy-danger).section .workgrid>.project-feature{height:240px!important}
 :is(#selected,#district9,#croki,#gipsy-danger).section .workgrid .project-thumbs.block-gallery{height:240px!important}
 }
+
+/* Keep each gallery, including its hover expansion, inside its own project panel. */
+:is(#selected,#district9,#croki,#gipsy-danger).section{
+position:relative!important;isolation:isolate;overflow:hidden!important;
+height:auto!important;padding-top:40px!important;padding-bottom:40px!important;
+}
+:is(#selected,#district9,#croki,#gipsy-danger).section .workgrid,
+:is(#selected,#district9,#croki,#gipsy-danger).section .workgrid .project-thumbs.block-gallery{
+box-sizing:border-box!important;min-width:0!important;min-height:0!important;
+}
+:is(#selected,#district9,#croki,#gipsy-danger).section .workgrid .workitem{
+box-sizing:border-box!important;min-height:0!important;min-width:0!important;max-width:100%!important;max-height:100%!important;
+}
+:is(#selected,#district9,#croki,#gipsy-danger).section .workgrid .workitem img{display:block!important;min-height:0!important;min-width:0!important}

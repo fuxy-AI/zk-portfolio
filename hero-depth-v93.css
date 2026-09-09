@@ -51,3 +51,26 @@ opacity:0;transition:opacity .45s ease;backface-visibility:hidden;
 .hero .stage .card.c2:hover{scale:1.045}
 .hero .stage .card.c2:hover img{transform:none!important}
 @media(prefers-reduced-motion:reduce){.hero .stage .card.c2{transition:none!important}}
+
+/* Featured projects in the hero: Space Marine right, Croki lower left, G upper left. */
+.hero .stage .card.space-marine-hero,
+.hero .stage .card.croki-hero,
+.hero .stage .card.c1{
+height:auto!important;aspect-ratio:auto!important;line-height:0;
+scale:1;transition:scale .9s cubic-bezier(.22,.61,.36,1),filter .7s ease,box-shadow .7s ease!important;
+}
+.hero .stage .card.space-marine-hero img,
+.hero .stage .card.croki-hero img,
+.hero .stage .card.c1 img{
+width:100%!important;height:auto!important;display:block;object-fit:contain!important;transform:none!important;
+}
+.hero .stage .card.space-marine-hero:hover,
+.hero .stage .card.croki-hero:hover,
+.hero .stage .card.c1:hover{scale:1.045}
+@media(min-width:721px){
+.hero .stage .card.c1{width:43%!important;left:5%!important;top:3%!important}
+.hero .stage .card.c6.croki-hero{width:25%!important;left:13%!important;top:68%!important}
+}
+@media(prefers-reduced-motion:reduce){
+.hero .stage .card.space-marine-hero,.hero .stage .card.croki-hero,.hero .stage .card.c1{transition:none!important}
+}

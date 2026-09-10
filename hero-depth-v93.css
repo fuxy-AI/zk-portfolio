@@ -126,3 +126,11 @@ scale:1;transition:scale .9s cubic-bezier(.22,.61,.36,1),filter .7s ease,box-sha
 .hero .stage .card.c7.gipsy-hero{width:30%!important;left:60%!important;top:72%!important;z-index:120!important;--tz:140px;--rx:-2deg;--ry:-5deg;--rz:-3deg}
 }
 @media(prefers-reduced-motion:reduce){.hero .stage .card.c7.gipsy-hero{transition:none!important}}
+
+/* Croki in front of Sazabi; lift the right-hand pair together to the reference guide. */
+.hero .stage .card.c6.croki-hero{z-index:110!important;--tz:120px}
+@media(min-width:721px){
+.hero .stage .card.c6.croki-hero{z-index:110!important;--tz:120px}
+.hero .stage .card.c5.space-marine-hero{top:31%!important}
+.hero .stage .card.c7.gipsy-hero{top:67%!important}
+}

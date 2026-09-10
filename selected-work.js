@@ -22,8 +22,8 @@ section.innerHTML='<div class="selected-index">04 / SELECTED WORK</div><div clas
 about.parentNode.insertBefore(section,document.querySelector('#croki')||about);
 }if(about&&!document.querySelector('#sazabi')){
 const section=document.createElement('section');section.id='sazabi';section.className='section';
-const files=["fullBody_render_v041.jpg","fullBody_render_v025.jpg","fullBody_render_v030.jpg","fullBody_render_v037.jpg","hangarTest_v002.jpg","shazabi_render_v001.jpg","farok_scrnShot_v031.JPG"];
-const cards=files.map((file,i)=>'<div class="workitem"><img loading="lazy" src="https://raw.githubusercontent.com/fuxy-AI/zk-portfolio/main/assets/Sazabi/'+encodeURIComponent(file)+'" alt="Sazabi '+(i===0?'featured full-body render':'mecha study')+' '+(i+1)+'"><div class="cap">SAZABI / '+String(i+1).padStart(2,'0')+'</div></div>').join('');
+const files=["fullBody_render_v037.jpg","fullBody_render_v025.jpg","fullBody_render_v030.jpg","fullBody_render_v041.jpg","hangarTest_v002.jpg","shazabi_render_v001.jpg","farok_scrnShot_v031.JPG"];
+const cards=files.map((file,i)=>'<div class="workitem"><img loading="lazy" src="https://raw.githubusercontent.com/fuxy-AI/zk-portfolio/main/assets/Sazabi/'+encodeURIComponent(file)+'?v=112" alt="Sazabi '+(i===0?'featured full-body render':'mecha study')+' '+(i+1)+'"><div class="cap">SAZABI / '+String(i+1).padStart(2,'0')+'</div></div>').join('');
 section.innerHTML='<div class="selected-index">05 / SELECTED WORK</div><div class="eyebrow">SELECTED WORK</div><h2>SAZABI</h2><p class="project-sub">A Sazabi mecha study exploring bold proportions, layered armor and intricate mechanical forms. Full-body renders sit alongside detail studies and lighting explorations to reveal the design from different perspectives. Open any image for a closer look at the surfaces, silhouette and construction.</p><div class="workgrid">'+cards+'</div><div class="sw-hint">CLICK ANY IMAGE TO OPEN / WHEEL TO ZOOM / DRAG TO PAN / ESC TO CLOSE</div>';
 about.parentNode.insertBefore(section,document.querySelector('#croki')||about);
 }document.querySelectorAll('#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi').forEach(section=>{

@@ -74,3 +74,22 @@ width:100%!important;height:auto!important;display:block;object-fit:contain!impo
 @media(prefers-reduced-motion:reduce){
 .hero .stage .card.space-marine-hero,.hero .stage .card.croki-hero,.hero .stage .card.c1{transition:none!important}
 }
+
+/* Portrait-led seven-image composition, centered within the right hero column. */
+.hero .stage .card.sazabi-hero{height:auto!important;aspect-ratio:auto!important;line-height:0;scale:1;transition:scale .9s cubic-bezier(.22,.61,.36,1),filter .7s ease,box-shadow .7s ease!important}
+.hero .stage .card.sazabi-hero img{width:100%!important;height:auto!important;object-fit:contain!important;display:block;transform:none!important}
+.hero .stage .card.sazabi-hero:hover{scale:1.045}
+.hero .stage .card:hover{z-index:50!important}
+@media(min-width:721px){
+.hero .stage{height:auto!important;min-height:0!important;aspect-ratio:1.25;align-self:center!important;transform:translate(-.5vw,0)!important}
+.hero .stage .card.c1{width:37%!important;left:5%!important;top:6%!important;z-index:4!important}
+.hero .stage .card.c2{width:32%!important;left:54%!important;top:6%!important;z-index:4!important}
+.hero .stage .card.c3.district-hero{width:23%!important;left:0%!important;top:32%!important;z-index:5!important}
+.hero .stage .card.c4.sazabi-hero{width:39%!important;left:32%!important;top:20%!important;z-index:3!important;--rx:-1deg;--ry:-2deg;--rz:1deg;--tz:14px}
+.hero .stage .card.c5.space-marine-hero{width:25%!important;left:74%!important;top:36%!important;z-index:5!important}
+.hero .stage .card.c6.croki-hero{width:23%!important;left:14%!important;top:64%!important;z-index:5!important}
+.hero .stage .card.c7{width:26%!important;height:auto!important;left:60%!important;top:76%!important;z-index:5!important}
+.hero .stage .card.c7 img{width:100%!important;height:auto!important;object-fit:contain!important}
+.hero .stage .card:hover{z-index:50!important}
+}
+@media(prefers-reduced-motion:reduce){.hero .stage .card.sazabi-hero{transition:none!important}}

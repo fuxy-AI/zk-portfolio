@@ -10,7 +10,7 @@ section.innerHTML='<div class="selected-index">06 / SELECTED WORK</div><div clas
 about.parentNode.insertBefore(section,about);
 }if(about&&!document.querySelector('#gipsy-danger')){
 const section=document.createElement('section');section.id='gipsy-danger';section.className='section';
-const files=["GD_final_v008.jpg","Gipsy_Danger_Dual.jpg","GD_draft_v042.jpg","GD_final_v011.jpg","Gipsy_Danger_Back_v003.jpg","GD_color_v019.jpg","Gipsy_Danger_Front.jpg"];
+const files=["Gipsy_Danger_FrontD.jpg","Gipsy_Danger_FrontD2.jpg","GD_final_v008.jpg","Gipsy_Danger_Dual.jpg","GD_draft_v042.jpg","GD_final_v011.jpg","Gipsy_Danger_Back_v003.jpg","GD_color_v019.jpg","Gipsy_Danger_Front.jpg"];
 const cards=files.map((file,i)=>'<div class="workitem"><img loading="lazy" src="https://raw.githubusercontent.com/fuxy-AI/zk-portfolio/main/assets/Gipsy%20Danger/'+encodeURIComponent(file)+'" alt="Gipsy Danger mech study '+(i+1)+'"><div class="cap">GIPSY DANGER / '+String(i+1).padStart(2,'0')+'</div></div>').join('');
 section.innerHTML='<div class="selected-index">03 / SELECTED WORK</div><div class="eyebrow">SELECTED WORK</div><h2>GIPSY DANGER</h2><p class="project-sub">A study of Gipsy Danger, exploring the powerful silhouette and intricate mechanical details of the iconic Jaeger. A selection of renders and development views highlights its armor, surface treatment and industrial character. Open the images to explore the model from different angles.</p><div class="workgrid">'+cards+'</div><div class="sw-hint">CLICK ANY IMAGE TO OPEN / WHEEL TO ZOOM / DRAG TO PAN / ESC TO CLOSE</div>';
 about.parentNode.insertBefore(section,document.querySelector('#croki')||about);

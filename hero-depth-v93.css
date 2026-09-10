@@ -105,3 +105,11 @@ border:0!important;outline:0!important;background:#080c0d!important;overflow:hid
 .hero .stage .card.c2{width:36%!important;left:57%!important;top:3%!important;z-index:4!important;--tz:0px}
 .hero .stage .card:hover{z-index:50!important}
 }
+
+/* Keep the central featured Sazabi ahead of every neighboring card, including hover. */
+.hero .stage .card.c4.sazabi-hero{
+z-index:100!important;--tz:90px;
+}
+@media(min-width:721px){
+.hero .stage .card.c4.sazabi-hero{z-index:100!important;--tz:90px}
+}

@@ -1,11 +1,11 @@
 (()=>{
 function boot(){
-document.querySelectorAll(':is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi) .project-feature').forEach(card=>{
+document.querySelectorAll(':is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi,#micro-rodent) .project-feature').forEach(card=>{
 const image=card.querySelector('img');
 function fit(){if(image.naturalWidth&&image.naturalHeight)card.style.setProperty('--feature-ratio',String(image.naturalWidth/image.naturalHeight));}
 image.addEventListener('load',fit);fit();
 });
-const galleries=[...document.querySelectorAll(':is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi) .project-thumbs')];
+const galleries=[...document.querySelectorAll(':is(#selected,#district9,#croki,#gipsy-danger,#space-marine,#sazabi,#micro-rodent) .project-thumbs')];
 function arrange(gallery){
 const cards=[...gallery.children],W=gallery.clientWidth,H=gallery.clientHeight;
 if(!W||!H||!cards.length)return;

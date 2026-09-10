@@ -93,3 +93,15 @@ width:100%!important;height:auto!important;display:block;object-fit:contain!impo
 .hero .stage .card:hover{z-index:50!important}
 }
 @media(prefers-reduced-motion:reduce){.hero .stage .card.sazabi-hero{transition:none!important}}
+
+/* Strengthen the upper-left anchor and place neighboring renders behind it. */
+.hero .stage .card.c1{
+border:0!important;outline:0!important;background:#080c0d!important;overflow:hidden!important;
+}
+.hero .stage .card.c1 img{border:0!important;outline:0!important;box-shadow:none!important}
+@media(min-width:721px){
+.hero .stage .card.c1{width:43%!important;left:3%!important;top:3%!important;z-index:7!important;--tz:32px}
+.hero .stage .card.c3.district-hero{width:28%!important;left:-2%!important;top:29%!important;z-index:4!important;--tz:0px}
+.hero .stage .card.c2{width:36%!important;left:57%!important;top:3%!important;z-index:4!important;--tz:0px}
+.hero .stage .card:hover{z-index:50!important}
+}

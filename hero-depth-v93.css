@@ -113,3 +113,16 @@ z-index:100!important;--tz:90px;
 @media(min-width:721px){
 .hero .stage .card.c4.sazabi-hero{z-index:100!important;--tz:90px}
 }
+
+/* Swap right-hand projects: readable Kshatriya above, foreground Gipsy below. */
+.hero .stage .card.c7.gipsy-hero{
+height:auto!important;aspect-ratio:auto!important;line-height:0;z-index:120!important;--tz:140px;
+scale:1;transition:scale .9s cubic-bezier(.22,.61,.36,1),filter .7s ease,box-shadow .7s ease!important;
+}
+.hero .stage .card.c7.gipsy-hero img{width:100%!important;height:auto!important;display:block;object-fit:contain!important;transform:none!important}
+.hero .stage .card.c7.gipsy-hero:hover{scale:1.045;z-index:120!important}
+@media(min-width:721px){
+.hero .stage .card.c2{width:36%!important;left:61%!important;top:0%!important;z-index:4!important}
+.hero .stage .card.c7.gipsy-hero{width:30%!important;left:60%!important;top:72%!important;z-index:120!important;--tz:140px;--rx:-2deg;--ry:-5deg;--rz:-3deg}
+}
+@media(prefers-reduced-motion:reduce){.hero .stage .card.c7.gipsy-hero{transition:none!important}}

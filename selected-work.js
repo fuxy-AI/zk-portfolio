@@ -28,7 +28,7 @@ section.innerHTML='<div class="selected-index">05 / SELECTED WORK</div><div clas
 about.parentNode.insertBefore(section,document.querySelector('#croki')||about);
 }if(about&&!document.querySelector('#micro-rodent')){
 const section=document.createElement('section');section.id='micro-rodent';section.className='section';
-const files=["A.jpg","B.jpg","C.jpg","D.jpg"];
+const files=["A.jpg","B.jpg","C.jpg","D.jpg","microRodent_N1.jpg","microRodent_N2.jpg","microRodent_N3.png"];
 const cards=files.map((file,i)=>'<div class="workitem"><img loading="lazy" src="https://raw.githubusercontent.com/fuxy-AI/zk-portfolio/main/assets/MicroRodent/'+encodeURIComponent(file)+'" alt="Micro Rodent '+(i===0?'featured image':'study')+' '+(i+1)+'"><div class="cap">MICRO RODENT / '+String(i+1).padStart(2,'0')+'</div></div>').join('');
 section.innerHTML='<div class="selected-index">07 / SELECTED WORK</div><div class="eyebrow">SELECTED WORK</div><h2>MICRO RODENT</h2><p class="project-sub">A small-scale study with a focus on character, distinctive shapes and carefully observed detail. This selection explores how form, surface and lighting work together to create a memorable presentation. Open the images to discover the project from different perspectives.</p><div class="workgrid">'+cards+'</div><div class="sw-hint">CLICK ANY IMAGE TO OPEN / WHEEL TO ZOOM / DRAG TO PAN / ESC TO CLOSE</div>';
 about.parentNode.insertBefore(section,about);

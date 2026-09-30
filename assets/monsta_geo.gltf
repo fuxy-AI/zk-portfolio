@@ -1,0 +1,630 @@
+{
+    "asset": {
+        "copyright": "(C)2026 fuxy",
+        "generator": "maya2glTF v1.5.2 fc60fee",
+        "version": "2.0"
+    },
+    "scenes": [
+        {
+            "nodes": [
+                4,
+                3,
+                2,
+                1,
+                0
+            ]
+        }
+    ],
+    "scene": 0,
+    "nodes": [
+        {
+            "name": "togh1",
+            "mesh": 0
+        },
+        {
+            "name": "nyelv1",
+            "mesh": 1
+        },
+        {
+            "name": "lips1",
+            "mesh": 2
+        },
+        {
+            "name": "eyes1",
+            "mesh": 3
+        },
+        {
+            "name": "body1",
+            "mesh": 4
+        }
+    ],
+    "meshes": [
+        {
+            "name": "toghShape1",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 1,
+                        "POSITION": 2,
+                        "TANGENT": 3,
+                        "TEXCOORD_0": 4
+                    },
+                    "indices": 0,
+                    "mode": 4,
+                    "material": 0
+                }
+            ]
+        },
+        {
+            "name": "nyelvShape1",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 6,
+                        "POSITION": 7,
+                        "TANGENT": 8,
+                        "TEXCOORD_0": 9
+                    },
+                    "indices": 5,
+                    "mode": 4,
+                    "material": 0
+                }
+            ]
+        },
+        {
+            "name": "lipsShape1",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 11,
+                        "POSITION": 12,
+                        "TANGENT": 13,
+                        "TEXCOORD_0": 14
+                    },
+                    "indices": 10,
+                    "mode": 4,
+                    "material": 0
+                }
+            ]
+        },
+        {
+            "name": "eyesShape1",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 16,
+                        "POSITION": 17,
+                        "TANGENT": 18,
+                        "TEXCOORD_0": 19
+                    },
+                    "indices": 15,
+                    "mode": 4,
+                    "material": 0
+                }
+            ]
+        },
+        {
+            "name": "bodyShape1",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 21,
+                        "POSITION": 22,
+                        "TANGENT": 23,
+                        "TEXCOORD_0": 24
+                    },
+                    "indices": 20,
+                    "mode": 4,
+                    "material": 0
+                }
+            ]
+        }
+    ],
+    "materials": [
+        {
+            "name": "GLSLShader1",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "metallicFactor": 0.5,
+                "roughnessFactor": 0.5
+            },
+            "emissiveFactor": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        }
+    ],
+    "accessors": [
+        {
+            "name": "toghShape1#0/indices",
+            "bufferView": 0,
+            "byteOffset": 0,
+            "componentType": 5125,
+            "count": 387486,
+            "max": [
+                387485
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "toghShape1#0/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 387486,
+            "max": [
+                0.9999642372131348,
+                0.9999452233314514,
+                0.9999606013298036
+            ],
+            "min": [
+                -0.9999930262565612,
+                -0.9999820590019226,
+                -0.999999701976776
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "toghShape1#0/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 4649832,
+            "componentType": 5126,
+            "count": 387486,
+            "max": [
+                1.880365014076233,
+                0.7789570093154907,
+                1.401505947113037
+            ],
+            "min": [
+                -1.8803550004959109,
+                -2.425736904144287,
+                -0.8172910213470459
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "toghShape1#0/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 387486,
+            "max": [
+                0.9999892711639404,
+                0.9999927878379822,
+                0.9999967217445374,
+                1.0
+            ],
+            "min": [
+                -0.9999701380729676,
+                -0.9999711513519288,
+                -0.9999950528144836,
+                -1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "toghShape1#0/vertices/TEXCOORD_0",
+            "bufferView": 3,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 387486,
+            "max": [
+                0.9980400204658508,
+                0.9980499744415284
+            ],
+            "min": [
+                0.0019499999471008776,
+                0.003160000080242753
+            ],
+            "type": "VEC2"
+        },
+        {
+            "name": "nyelvShape1#0/indices",
+            "bufferView": 0,
+            "byteOffset": 1549944,
+            "componentType": 5125,
+            "count": 107244,
+            "max": [
+                107243
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "nyelvShape1#0/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 9299664,
+            "componentType": 5126,
+            "count": 107244,
+            "max": [
+                0.999623954296112,
+                0.9999731183052064,
+                0.9999815225601196
+            ],
+            "min": [
+                -1.0,
+                -0.9999961256980896,
+                -0.9995326399803162
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "nyelvShape1#0/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 10586592,
+            "componentType": 5126,
+            "count": 107244,
+            "max": [
+                0.4276770055294037,
+                0.14436499774456025,
+                1.211148977279663
+            ],
+            "min": [
+                -0.4295760095119477,
+                -0.22637900710105897,
+                0.233584001660347
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "nyelvShape1#0/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 6199776,
+            "componentType": 5126,
+            "count": 107244,
+            "max": [
+                0.9999139904975892,
+                0.9999866485595704,
+                0.9996670484542848,
+                1.0
+            ],
+            "min": [
+                -0.9999962449073792,
+                -0.9999924302101136,
+                -0.999557614326477,
+                -1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "nyelvShape1#0/vertices/TEXCOORD_0",
+            "bufferView": 3,
+            "byteOffset": 3099888,
+            "componentType": 5126,
+            "count": 107244,
+            "max": [
+                0.5959782600402832,
+                0.7956366539001465
+            ],
+            "min": [
+                0.3982748687267304,
+                0.6412051916122437
+            ],
+            "type": "VEC2"
+        },
+        {
+            "name": "lipsShape1#0/indices",
+            "bufferView": 0,
+            "byteOffset": 1978920,
+            "componentType": 5125,
+            "count": 454932,
+            "max": [
+                454931
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "lipsShape1#0/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 11873520,
+            "componentType": 5126,
+            "count": 454932,
+            "max": [
+                0.9999826550483704,
+                0.999998927116394,
+                0.9999877214431764
+            ],
+            "min": [
+                -0.9999939203262328,
+                -0.9999918341636658,
+                -0.9999752044677734
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "lipsShape1#0/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 17332704,
+            "componentType": 5126,
+            "count": 454932,
+            "max": [
+                0.938821017742157,
+                0.9730460047721864,
+                1.4753990173339844
+            ],
+            "min": [
+                -0.9355509877204896,
+                -0.5362480282783508,
+                0.5347380042076111
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "lipsShape1#0/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 7915680,
+            "componentType": 5126,
+            "count": 454932,
+            "max": [
+                0.9999939203262328,
+                0.9999884963035584,
+                0.9999906420707704,
+                1.0
+            ],
+            "min": [
+                -0.9999715089797974,
+                -0.999994695186615,
+                -0.999984622001648,
+                -1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "lipsShape1#0/vertices/TEXCOORD_0",
+            "bufferView": 3,
+            "byteOffset": 3957840,
+            "componentType": 5126,
+            "count": 454932,
+            "max": [
+                0.8983700275421143,
+                0.9980499744415284
+            ],
+            "min": [
+                0.0019499999471008776,
+                0.0019599799998104578
+            ],
+            "type": "VEC2"
+        },
+        {
+            "name": "eyesShape1#0/indices",
+            "bufferView": 0,
+            "byteOffset": 3798648,
+            "componentType": 5125,
+            "count": 1179648,
+            "max": [
+                786431
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "eyesShape1#0/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 22791888,
+            "componentType": 5126,
+            "count": 786432,
+            "max": [
+                0.9999996423721314,
+                0.9999850988388062,
+                0.9999884366989136
+            ],
+            "min": [
+                -0.999999701976776,
+                -0.9999844431877136,
+                -0.9999885559082032
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "eyesShape1#0/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 32229072,
+            "componentType": 5126,
+            "count": 786432,
+            "max": [
+                0.2925400137901306,
+                1.2086460590362549,
+                1.1226110458374024
+            ],
+            "min": [
+                -0.2925400137901306,
+                0.930715024471283,
+                0.8446189761161804
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "eyesShape1#0/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 15194592,
+            "componentType": 5126,
+            "count": 786432,
+            "max": [
+                1.0,
+                1.0,
+                0.9971089959144592,
+                1.0
+            ],
+            "min": [
+                -0.8657944798469544,
+                -0.865544319152832,
+                -1.0,
+                1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "eyesShape1#0/vertices/TEXCOORD_0",
+            "bufferView": 3,
+            "byteOffset": 7597296,
+            "componentType": 5126,
+            "count": 786432,
+            "max": [
+                0.9257910251617432,
+                0.9980080127716065
+            ],
+            "min": [
+                0.0018479999853298069,
+                0.001991986995562911
+            ],
+            "type": "VEC2"
+        },
+        {
+            "name": "bodyShape1#0/indices",
+            "bufferView": 0,
+            "byteOffset": 8517240,
+            "componentType": 5125,
+            "count": 2029665,
+            "max": [
+                2029664
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "bodyShape1#0/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 41666256,
+            "componentType": 5126,
+            "count": 2029665,
+            "max": [
+                1.0,
+                0.9999985098838806,
+                0.9999980330467224
+            ],
+            "min": [
+                -1.0,
+                -0.999995529651642,
+                -0.9999988675117492
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "bodyShape1#0/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 66022236,
+            "componentType": 5126,
+            "count": 2029665,
+            "max": [
+                1.9498690366744996,
+                2.2785298824310304,
+                2.0033888816833498
+            ],
+            "min": [
+                -1.9498480558395384,
+                -2.4059529304504396,
+                -1.0073410272598269
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "bodyShape1#0/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 27777504,
+            "componentType": 5126,
+            "count": 2029665,
+            "max": [
+                0.9999898672103882,
+                0.9999945759773254,
+                0.999996542930603,
+                1.0
+            ],
+            "min": [
+                -1.0,
+                -0.9999864101409912,
+                -0.9999985098838806,
+                -1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "bodyShape1#0/vertices/TEXCOORD_0",
+            "bufferView": 3,
+            "byteOffset": 13888752,
+            "componentType": 5126,
+            "count": 2029665,
+            "max": [
+                0.9980469942092896,
+                0.9976159930229188
+            ],
+            "min": [
+                0.001952999969944358,
+                0.18115198612213136
+            ],
+            "type": "VEC2"
+        }
+    ],
+    "bufferViews": [
+        {
+            "name": "monsta_geo/data/indices-4",
+            "buffer": 0,
+            "byteOffset": 180756432,
+            "byteLength": 16635900,
+            "target": 34963
+        },
+        {
+            "name": "monsta_geo/data/vertices-12",
+            "buffer": 0,
+            "byteOffset": 60252144,
+            "byteLength": 90378216,
+            "byteStride": 12,
+            "target": 34962
+        },
+        {
+            "name": "monsta_geo/data/vertices-16",
+            "buffer": 0,
+            "byteOffset": 0,
+            "byteLength": 60252144,
+            "byteStride": 16,
+            "target": 34962
+        },
+        {
+            "name": "monsta_geo/data/vertices-8",
+            "buffer": 0,
+            "byteOffset": 150630360,
+            "byteLength": 30126072,
+            "byteStride": 8,
+            "target": 34962
+        }
+    ],
+    "buffers": [
+        {
+            "name": "monsta_geo/data",
+            "byteLength": 197392332,
+            "uri": "monsta_geo0.bin"
+        }
+    ]
+}
